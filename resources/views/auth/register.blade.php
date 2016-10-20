@@ -38,6 +38,7 @@
                             <input type="password" placeholder="Confirmar Senha" name="password_confirmation" required="">
                             <i class="glyphicon glyphicon-lock"></i>
                         </div>
+                        <!-- 
                         <div class="login-mail">
                             <input type="text" placeholder="CEP"   required="" name="cep" id="cep">
                             <i  class="glyphicon glyphicon-home"></i>

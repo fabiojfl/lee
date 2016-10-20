@@ -36,7 +36,7 @@ class AuthServiceProvider extends ServiceProvider
 
 	    $gate->define('user', function(User $user){
 
-		    return $user->is_admin == 2;
+		    return $user->is_admin == 0;
 
      	});
         //
