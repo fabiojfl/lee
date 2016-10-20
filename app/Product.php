@@ -11,17 +11,17 @@ class Product extends Model {
         'sale',
         'featured',
         'recommend',
-        'sub_category_id'
+        'category_id'
     ];
 
-    public function subCategory()
+    public function category()
     {
-        return $this->belongsTo('CodeCommerce\SubCategory');
+        return $this->belongsTo('CodeCommerce\Category');
     }
     
-    public function subCategories()
+    public function categories()
     {
-    	return $this->belongsTo('CodeCommerce\SubCategory');
+    	return $this->belongsTo('CodeCommerce\Category');
     }
 
     public function images()
@@ -70,6 +70,5 @@ class Product extends Model {
     {
     	return $query->where('category_id', '=', $id);
     }
-
 
 }

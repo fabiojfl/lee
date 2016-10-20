@@ -10,14 +10,10 @@ class Category extends Model {
         'description'
     ];
 
-    public function subCategories()
-    {
-        return $this->hasMany('CodeCommerce\SubCategory');
-    }
     
-    public function subCategory()
+    public function products()
     {
-    	return $this->hasMany('CodeCommerce\SubCategory');
+    	 return $this->hasMany('CodeCommerce\Product');
     }
     
 
