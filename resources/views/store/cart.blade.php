@@ -8,7 +8,7 @@
                     <tr class="cart_menu">
                         <td class="image">Item</td>
                         <td class="description"></td>
-                        <td class="price">Valor</td>
+                        <td class="price">Valor Unidade</td>
                         <td class="price">Quantidade</td>
                         <td class="price">Total</td>
                         <td class="price" colspan="2"></td>
@@ -30,7 +30,7 @@
                             </td>
                             <td class="cart_price">
 
-                            R$ {{number_format($item['price'],2 , "," , ".")}}
+                            R$ {{number_format($item['sale'],2 , "," , ".")}}
 
                             </td>
 
@@ -48,7 +48,7 @@
 
                             <td class="cart_total">
 
-                                <p class="cart_total_price">R$ {{number_format($item['price'],2 , "," , ".") * $item['qtd']}}</p>
+                                <p class="cart_total_price">R$ {{number_format($item['sale'],2 , "," , ".") * $item['qtd']}}</p>
                      </td>
                             <td class="cart_delete">
                                 <a href="{{route('store.cart.destroy', ['id'=>$k ])}}" class="cart_quantity_delete">DELETE</a>

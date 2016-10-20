@@ -25,7 +25,7 @@ class CartController extends Controller
     {
         $cart = $this->getCart();
         $product = $this->product->find($id);
-        $cart->add($id, $product->name, $product->price);
+        $cart->add($id, $product->name, $product->sale);
         Session::set('cart', $cart);
         return redirect()->route('store.cart');
     }

@@ -46,9 +46,9 @@ class CheckoutController extends Controller
 
             foreach($cart->all() as $k=>$item)
             {
-                $checkout->addItem(new Item($k, $item['name'], number_format($item['price'],2,".",""), $item['qtd']));
+                $checkout->addItem(new Item($k, $item['name'], number_format($item['sale'],2,".",""), $item['qtd']));
 
-                $orderItem =  $order->items()->create(['product_id' => $k , 'price' => number_format($item['price'],2,".", ""), 'qtd' => $item['qtd']]);
+                $orderItem =  $order->items()->create(['product_id' => $k , 'sale' => number_format($item['sale'],2,".", ""), 'qtd' => $item['qtd']]);
             }
             
             $cart->clear();
