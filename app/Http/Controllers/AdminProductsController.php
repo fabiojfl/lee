@@ -15,14 +15,12 @@ class AdminProductsController extends Controller {
     private $category;
 	private $product;
     private $tag;
-    private $subCategory;
 
-    public function __construct(Category $category, SubCategory $subCategory,  Product $product, Tag $tag)
+    public function __construct(Category $category, Product $product, Tag $tag)
     {
     	$this->category = $category;
         $this->product  = $product;
         $this->tag      = $tag;
-        $this->subCategory = $subCategory;
 
         $this->middleware('auth');
     }
@@ -36,11 +34,10 @@ class AdminProductsController extends Controller {
 
     public function create()
     {
-    	$listSubCategories = $this->subCategory->lists('name', 'id');
         $listCategories = $this->category->lists('name', 'id');
         $categories     = $this->category->all();
 
-        return view('admin.products.create',compact('listCategories', 'listSubCategories', 'categories' ));
+        return view('admin.products.create',compact('listCategories','categories' ));
     }
 
     public function store(ProductRequest $request)
@@ -66,13 +63,12 @@ class AdminProductsController extends Controller {
 
     public function edit($id)
     {
-    	$listSubCategories = $this->subCategory->lists('name', 'id');
         $listCategories = $this->category->lists('name', 'id');
         $categories     = $this->category->all();
         
         $product = $this->product->find($id);
 
-        return view('admin.products.edit',compact('product', 'categories','listSubCategories','listCategories'));
+        return view('admin.products.edit',compact('product', 'categories','listCategories'));
     }
 
     public function update($id, ProductRequest $request)

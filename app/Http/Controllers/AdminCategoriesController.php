@@ -14,31 +14,28 @@ class AdminCategoriesController extends Controller {
 	private $category;
     private $product;
     private $order;
-    private $subCategory;
-
-    public function __construct(Category $category, Product $product, Order $order, SubCategory $subCategory)
+    
+    public function __construct(Category $category, Product $product, Order $order)
     {
         $this->category = $category;
         $this->product = $product;
         $this->order = $order;
-        $this->subCategory = $subCategory;
     }
 
     public function index()
     {
         $categories = $this->category->paginate(15);
-        $subCategories =  $this->subCategory->all();
-        return view('admin.categories.index',compact('categories','subCategories'));
+        $Categories =  $this->category->all();
+        return view('admin.categories.index',compact('categories'));
     }
 
     public function create()
     {
-        $categories = $this->category->all();
-        $subCategories =  $this->subCategory->all();
+        $categories =  $this->category->all();
         $product = $this->product->all();
         $order = $this->order->all();
 
-        return view('admin.categories.create',compact('categories', 'product','order','subCategories'));
+        return view('admin.categories.create',compact('categories', 'product','order'));
     }
 
     public function store(CategoryRequest $request)
@@ -52,12 +49,11 @@ class AdminCategoriesController extends Controller {
     public function edit($id)
     {
         $categories = $this->category->all();
-        $subCategories =  $this->subCategory->all();
         $product = $this->product->all();
         $order = $this->order->all();
 
         $category = $this->category->find($id);
-        return view('admin.categories.edit',compact('category','categories','product', 'order','subCategories'));
+        return view('admin.categories.edit',compact('category','categories','product', 'order'));
     }
 
     public function update(CategoryRequest $request, $id)

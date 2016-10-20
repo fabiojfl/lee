@@ -16,12 +16,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Order $order, Category $category, SubCategory $subCategory)
+    public function __construct(Order $order, Category $category)
     {
         $this->middleware('auth');
 	    $this->order = $order;
         $this->category = $category;
-        $this->subCategory = $subCategory;
     }
 
     /**
@@ -38,9 +37,8 @@ class HomeController extends Controller
 	$orders = $this->order->all();
 	//$this->authorize('admin-order', $orders);
         $categories = $this->category->all();
-        $subCategories = $this->subCategory->all();
 
-        return view('home',compact('orders', 'categories', 'subCategories'));
+        return view('home',compact('orders', 'categories'));
     }
 
     public function update($idOrder)
