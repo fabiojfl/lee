@@ -13,9 +13,6 @@
 				<ul class="cute">
 					<li class="subitem2"><a href="{{ route('admin.categories.create') }}">Criar Categorias</a></li>
 					<li class="subitem3"><a href="{{ route('admin.categories.index') }}">Listar Categorias</a></li>
-					
-						<li class="subitem4"><a href="{{ route('admin.sub_categories.create') }}">Criar sub Categorias</a></li>
-					<li class="subitem5"><a href="{{ route('admin.sub_categories.index') }}">Listar sub Categorias</a></li>
 				</ul>
 			</li>
 			<li class="item3"><a href="#">Produtos</a>
@@ -45,7 +42,7 @@
 			<!-- CRIAR CATEGORIA E SUB-CATEGORIAS PARA OS PRODUTOS -->
 			<!--  <li class="item1"><a href="">Camisas</a>-->
 				<ul class="cute">
-					@foreach($subCategories as $category)
+					@foreach($categories as $category)
 						<li class="item1"><a href="{{route('store.category',['id'=> $category->id])}}">{{$category->name}}</a></li>
 					@endforeach
 				</ul>

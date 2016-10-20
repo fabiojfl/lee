@@ -20,7 +20,7 @@
                                 @foreach($products as $product)
                                         <tr>
                                                 <td>{{$product->id}}</td>
-                                                <td>{{$product->subCategory->name}}</td>
+                                                <td>{{$product->category->name}}</td>
                                                 <td>{{$product->name}}</td>
                                                 <td><b>R$</b>&nbsp; {{number_format($product->price,2 , "," , ".")}}</td>
                                                 <td>

@@ -8,18 +8,17 @@
                         <div class="col-md-6 login-do">
                             <h3>Já tenho um cadastro</h3>
                             <br>
-
-                            <div class="login-mail{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <input  type="text" placeholder="Email"  name="email" value="{{ old('email') }}" id="email">
-                                <i  class="glyphicon glyphicon-envelope"></i>
-                            </div>
-                            @if ($errors->has('email'))
+    						@if ($errors->has('email'))
                             <div class="alert alert-danger" role="alert">
                                 <ul class="nav nav-pills nav-stacked">
                                         <li>{{ $errors->first('email') }}</li>
                                 </ul>
                             </div>
                             @endif
+                            <div class="login-mail{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <input  type="text" placeholder="Email"  name="email" value="{{ old('email') }}" id="email">
+                                <i  class="glyphicon glyphicon-envelope"></i>
+                            </div>
                             <div class="login-mail{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <input type="password" placeholder="Senha" required="" name="password">
                                 <i class="glyphicon glyphicon-lock"></i>
@@ -35,7 +34,6 @@
                                   <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
                             </a>
                             -->
-
                             <label class="hvr-skew-backward">
                                 <input type="submit" value="Continuar">
                             </label>

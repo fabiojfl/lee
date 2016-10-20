@@ -3,10 +3,6 @@
         <span>{!! Form::label('category_id','Categoria:') !!}</span>
         {!! Form::select('', $listCategories, ['class'=>'form-control']) !!}
     </div>
-	<div>
-        <span>{!! Form::label('sub_category_id','Sub Categoria:') !!}</span>
-        {!! Form::select('sub_category_id', $listSubCategories, ['class'=>'form-control']) !!}
-    </div>
     <div>
     <span>{!! Form::label('name','Nome:') !!}</span>
     {!! Form::text('name', null, ['class'=>'form-control']) !!}

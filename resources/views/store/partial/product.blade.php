@@ -20,7 +20,7 @@
 						<div class="mid-1">
 						<div class="women">
 						<div class="women-top">
-							<span>{{$product->subCategory->category->name}}</span>
+							<span>{{$product->category->name}}</span>
 							<h6><a href="{{route('store.product', ['id' => $product->id])}}">{{$product->name}}</a></h6>
 							</div>
 							<div class="img item_add">
