@@ -1,0 +1,6 @@
+
+
+
+{{$orders->total}}
+{{$orders->status}}
+

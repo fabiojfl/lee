@@ -90,6 +90,7 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get(''                    ,['as'=>'admin.orders.index', 		    'uses'=> 'AdminOrdersController@index']);
 		Route::get('edit-status/{id}'    ,['as'=>'admin.orders.edit_status',	'uses'=> 'AdminOrdersController@editStatus']);
 		Route::put('update-status/{id}'  ,['as'=>'admin.orders.update_status',	'uses'=> 'AdminOrdersController@updateStatus']);
+		Route::get('show/{id}'           ,['as'=>'admin.orders.show', 		    'uses'=> 'AdminOrdersController@show']);
 	});
 
 	Route::group(['prefix' => 'profiles'], function(){

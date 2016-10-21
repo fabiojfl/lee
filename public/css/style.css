@@ -954,6 +954,34 @@ ul.product-qty {
 .wish-list li a:hover{
 	text-decoration:none;
 }
+
+/***/
+
+.wish-list-table {
+	padding: 0;
+}
+.wish-list-table ul{
+	padding:0;
+	list-style:none;
+}
+.wish-list-table li {
+	display: inline-block;
+	margin-right: 45px;
+}
+
+.wish-list-table li a {
+	color:#F67777;
+	font-size: 0.85em;
+	text-decoration: underline;
+}
+.wish-list-table li a span {
+	padding-right:10px;
+}
+.wish-list-table li a:hover{
+	text-decoration:none;
+}
+
+
 .quantity_box {
 	float: left;
     margin-right: 3em;

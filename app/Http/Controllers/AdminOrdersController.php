@@ -12,10 +12,11 @@ use CodeCommerce\Http\Requests\OrderRequest;
 class AdminOrdersController extends Controller
 {
     private $order;
+    private $items;
     
     public function __construct(Order $order)
     {
-    	$this->order = $order; 
+    	$this->order = $order;
     }
     
     public function index()
@@ -37,5 +38,18 @@ class AdminOrdersController extends Controller
 		return redirect()->route('admin.orders.index');
     }
 
+    public function show($id)
+    {
+/*
+        $orders  = $this->order
+            ->join('orders', 'users.id', '=', 'order_items.order_id')
+            ->join('order_items', $id, '=', 'products.order_id')
+            ->select('*')
+            ->get();
+
+        		//= $this->order->find($id);
+*/
+        return view('admin.orders.show', compact('orders'));
+    }
 
 }
