@@ -32,6 +32,7 @@ Route::get('cart/add/{id}',         ['as'=> 'store.cart.add', 'uses'=>'CartContr
 Route::get('cart/destroy/{id}',     ['as'=> 'store.cart.destroy', 'uses'=>'CartController@destroy']);
 Route::put('cart/update/{id}',      ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
 
+//Route::get('profile/show/{id}',['as'=>'store.profile.show','users'=>'AdminProfilesController@show']);
 
 
 Route::group(['middleware' => 'auth'], function(){
@@ -39,10 +40,18 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('checkout/placeorder', ['as' => 'store.checkout.place', 'uses' => 'CheckoutController@place']);
 	Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
 
+
 });
 
 Route::get('dashboard/home', ['as'=>'store.dashboard.home', 'uses' => 'StoreController@dashboard']);
 //Route::get('',['as'=> 'dashboard','uses'=>'' ]);
+
+
+
+Route::get('newsletters/create',['as'=>'admin.newsletters.create','uses'=> 'AdminNewsletterController@create']);
+Route::post('newsletters/create',['as'=>  'admin.newsletters.store','uses'=>'AdminNewsletterController@store']);
+Route::get('newsletters/message',['as'=>'admin.newsletters.message','uses'=> 'AdminNewsletterController@message']);
+
 
 Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 
@@ -96,6 +105,12 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 	Route::group(['prefix' => 'profiles'], function(){
 		Route::get(''                    ,['as'=>'admin.orders.index', 		    'uses'=> 'AdminOrdersController@index']);
 	});
+
+	Route::group(['prefix' => 'newsletters'], function(){
+
+		Route::get('',['as'=>'admin.newsletters.index', 'uses'=> 'AdminNewsletterController@index']);
+	});
+
 });
 
 Route::controllers([

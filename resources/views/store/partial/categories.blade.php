@@ -26,11 +26,18 @@
 					<li class="subitem1"><a href="{{ route('admin.orders.index') }}	">Listar Pedidos</a></li>
 				</ul>
 			</li>
-			<li class="item4"><a href="#">Gerencia de usuários</a>
+			<li class="item5"><a href="#">Gerencia de usuários</a>
+
+				<ul class="cute">
+					<li class="subitem1"><a href="{{ route('admin.newsletters.index') }}">Newsletter</a></li>
+				</ul>
+			</li>
+			<li class="item6"><a href="#">Gerencia de usuários</a>
 				<ul class="cute">
 					<li class="subitem1"><a href="{{ url('/register') }}">Criar usuários do sistema</a></li>
 				</ul>
 			</li>
+
 
 		</ul>
 	</div>

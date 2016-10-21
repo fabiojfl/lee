@@ -456,7 +456,7 @@
 						<span>Envie seu email para receber promoções e novidades.</span>
 							<form>
 								<input type="text" value="Seu email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
-								<input type="submit" value="Enviar">	
+								<input type="submit" value="Enviar">
 							</form>
 					</div>
 					<div class="clearfix"> </div>
