@@ -1,6 +1,24 @@
 @extends('store.store')
 @section('content')
+	@can('admin')
 
+
+	<div class="col-md-9 contact-top ">
+		<h3>Super Administrador</h3>
+		<h2>Olá,{{ Auth::user()->name }}.</h2>
+		<hr>
+
+			<div class="clearfix"> </div>
+	</div>
+
+
+@section('categories')
+	@include('store.partial.categories')
+@stop
+
+	@endcan
+
+	@can('user')
 	<div class="single">
 
 		<div class="container">
@@ -18,15 +36,12 @@
 
 						<div class="profile-usertitle">
 							<div class="profile-usertitle-name">
-								@can('admin')
-								<h3>Super Administrador</h3>
-								<h2>Olá,{{ Auth::user()->name }}.</h2>
-								@endcan
 
-								@can('user')
+
+
 
 								<h2>Olá,{{ Auth::user()->name }}.</h2>
-								@endcan
+
 							</div>
 
 							<div class="profile-usertitle-job">
@@ -66,7 +81,7 @@
 					</div>
 				</div>
 				<div class="col-md-8 single-top-in ">
-					@can('user')
+
 					<h3>Lista de pedidos</h3>
 					<p class="in-para"> Olá,<b>{{ Auth::user()->name }}.</b> Veja sua lista de pedidos.</p>
 					<div class="bs-example" data-example-id="simple-table">
@@ -94,7 +109,7 @@
 							@endforeach
 						</table>
 					</div>
-					@endcan
+
 				</div>
 
 			</div>
@@ -108,6 +123,6 @@
 	<!---->
 	</div>
 
-
+	@endcan
 
 @endsection
