@@ -11,7 +11,9 @@
 	"guzzle/guzzle": "^3.9",
 	"guzzlehttp/guzzle": "^6.2",
         "laravelcollective/html": "^5.2.0",
-        "wesleywillians/laravel-pagseguro": "dev-master"
+        "wesleywillians/laravel-pagseguro": "dev-master",
+        "cagartner/correios-consulta": "0.1.*",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

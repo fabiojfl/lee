@@ -34,7 +34,7 @@
 			</li>
 			<li class="item6"><a href="#">Gerencia de usuários</a>
 				<ul class="cute">
-					<li class="subitem1"><a href="{{ url('/register') }}">Criar usuários do sistema</a></li>
+					<li class="subitem1"><a href="{{ route('admin.users.index') }}">Usuários do sistema</a></li>
 				</ul>
 			</li>
 

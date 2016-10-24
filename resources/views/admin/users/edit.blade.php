@@ -1,7 +1,7 @@
 @extends('store.store')
 
 @section('content')
-    <h1>Create User</h1>
+    <h1>Edit User: {{ $user->name }}</h1>
     @if($errors->any())
         <ul class="alert">
             @foreach($errors->all() as $erro)
@@ -10,14 +10,14 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'admin.users.store']) !!}
-    @include('users._form')
+    {!! Form::model($user, ['route'=>['admin.users.update', $user->id], 'method' => 'put']) !!}
+
     <div class="form-group">
         {!! Form::label('is_admin', 'Admin:') !!}
         {!! Form::checkbox('is_admin') !!}
     </div>
     <div class="form-group">
-        {!! Form::submit('Add User', ['class'=>'btn btn-primary ']) !!}
+        {!! Form::submit('Save User', ['class'=>'btn btn-primary']) !!}
         <a href="{{ route('admin.users.index') }}" class='btn btn-default '>Back</a>
     </div>
     {!! Form::close() !!}

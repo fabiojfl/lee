@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -157,8 +157,10 @@ return [
         CodeCommerce\Providers\RouteServiceProvider::class,
 	LaravelPagseguro\LaravelPagseguroServiceProvider::class,
  	Collective\Html\HtmlServiceProvider::class,
+		Cagartner\CorreiosConsulta\ServiceProvider::class,
 
-    ],
+
+	],
 
     /*
     |--------------------------------------------------------------------------
@@ -205,6 +207,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 	'Form' => Collective\Html\FormFacade::class,
       	'Html' => Collective\Html\HtmlFacade::class,
+		'Correios'    => Cagartner\CorreiosConsulta\Facade::class,
 
     ],
 

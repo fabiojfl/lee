@@ -61,7 +61,7 @@
 						<div class="profile-usermenu wish-list-table">
 							<ul class="nav">
 								<li class="wish">
-									<a href="#">
+									<a href="{{ route('register.show', ['id'=>Auth::user()->id]) }}">
 										<span><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
 										Meu Perfil </a>
 									</a>
@@ -95,10 +95,8 @@
 							@foreach($orders as $order)
 								<tr>
 									<td>{{$order->updated_at}}</td>
-
 									<td>{{$order->status}}</td>
 									<td class="text-center">
-
 										<div class="wish-list-table">
 											<ul>
 												<li class="wish"><a href="{{ route('admin.orders.show',['id'=> $order->id]) }}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Visualizar pedido</a></li>

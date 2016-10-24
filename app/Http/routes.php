@@ -34,6 +34,12 @@ Route::put('cart/update/{id}',      ['as' => 'store.cart.update', 'uses' => 'Car
 
 //Route::get('profile/show/{id}',['as'=>'store.profile.show','users'=>'AdminProfilesController@show']);
 
+Route::group(['prefix'=>'register', 'as'=>'register.'], function(){
+	Route::get('', 				['as' => 'index', 	'uses'=>'RegisterController@index']);
+	Route::post('store', 		['as' => 'store', 	'uses'=>'RegisterController@store']);
+	Route::post('address', 		['as' => 'address', 'uses'=>'RegisterController@address']);
+	Route::get('{id}/show', 	['as'=>	 'show', 	'uses'=>'RegisterController@show']);
+});
 
 Route::group(['middleware' => 'auth'], function(){
 	
@@ -111,6 +117,16 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('',['as'=>'admin.newsletters.index', 'uses'=> 'AdminNewsletterController@index']);
 	});
 
+	Route::group(['prefix'=> 'users'],function(){
+		Route::get('', 				['as' => 'admin.users.index', 	'uses' => 'AdminUsersController@index']);
+		Route::get('{id}/show', 	['as' => 'admin.users.show', 	'uses' => 'AdminUsersController@show']);
+		Route::get('create', 		['as' => 'admin.users.create', 	'uses' => 'AdminUsersController@create']);
+		Route::post('store', 		['as' => 'admin.users.store', 	'uses' => 'AdminUsersController@store']);
+		Route::get('{id}/edit', 	['as' => 'admin.users.edit', 	'uses' => 'AdminUsersController@edit']);
+		Route::put('{id}/update', 	['as' => 'admin.users.update', 	'uses' => 'AdminUsersController@update']);
+		Route::get('{id}/destroy', 	['as' => 'admin.users.destroy', 'uses' => 'AdminUsersController@destroy']);
+	});
+
 });
 
 Route::controllers([
@@ -121,4 +137,4 @@ Route::controllers([
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', ['as' => 'home', 	'uses' => 'HomeController@index']);

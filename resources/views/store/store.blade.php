@@ -506,7 +506,7 @@
 		});
 
 		</script>
-<script src="{{ asset('js/jquery.maskmoney.min.js') }}" type="text/javascript"></script>
+<!--<script src="{{ asset('js/jquery.maskmoney.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/jquery.maskedinput.min.js') }}" type="text/javascript"></script>
 <script>
 	$(function($){
@@ -519,7 +519,8 @@
 		$("#valor").maskMoney({prefix:'R$ ', thousands:'.',decimal:','});
 	});
 </script>
-
+-->
+<script src="{{ asset('js/busca-cep.js') }}" type="text/javascript"></script>
 
 </body>
 </html>

@@ -4,6 +4,7 @@ namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
 use CodeCommerce\Http\Requests;
+use CodeCommerce\User;
 use Illuminate\Http\Request;
 use CodeCommerce\Order;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $this->middleware('auth');
 	    $this->order = $order;
         $this->category = $category;
+
     }
 
     /**
