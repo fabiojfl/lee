@@ -28,12 +28,13 @@
                                     </span>
                                 @endif
                             </div>
-                            <!--<a class="news-letter" href="{{ url('/password/reset') }}">Esqueceu a senha?</a>-->
-                            <!--
-                            <a class=" " href="#">
+                            <a class="news-letter" href="{{ url('/password/reset') }}">Esqueceu a senha?</a>
+                            
+                            <!-- <a class=" " href="#">
                                   <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
                             </a>
-                            -->
+                             -->
+                            
                             <label class="hvr-skew-backward">
                                 <input type="submit" value="Continuar">
                             </label>
