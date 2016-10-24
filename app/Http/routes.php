@@ -123,7 +123,7 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('create', 		['as' => 'admin.users.create', 	'uses' => 'AdminUsersController@create']);
 		Route::post('store', 		['as' => 'admin.users.store', 	'uses' => 'AdminUsersController@store']);
 		Route::get('{id}/edit', 	['as' => 'admin.users.edit', 	'uses' => 'AdminUsersController@edit']);
-		Route::put('{id}/update', 	['as' => 'admin.users.update', 	'uses' => 'AdminUsersController@update']);
+		Route::put('{id}/update', 	['as' => 'admin.user.update', 	'uses' => 'AdminUsersController@update']);
 		Route::get('{id}/destroy', 	['as' => 'admin.users.destroy', 'uses' => 'AdminUsersController@destroy']);
 	});
 

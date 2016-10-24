@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "35ceff3e4fe355cb7553e9b80fe9e869",
+    "hash": "75f9b236415179f7fe4776c651b0890e",
     "content-hash": "749d5aea80c9e6bf1d5ebf9b82374a50",
     "packages": [
         {
@@ -191,31 +191,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f9cf50745a45cae4a55f35e7691d124c4d887e45"
+                "reference": "58e3ca626981b6ff818f42fb57f318a6e14f361f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f9cf50745a45cae4a55f35e7691d124c4d887e45",
-                "reference": "f9cf50745a45cae4a55f35e7691d124c4d887e45",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/58e3ca626981b6ff818f42fb57f318a6e14f361f",
+                "reference": "58e3ca626981b6ff818f42fb57f318a6e14f361f",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^5.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -251,7 +251,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-08-31 09:31:57"
+            "time": "2016-10-24 11:24:31"
         },
         {
             "name": "doctrine/cache",
@@ -756,12 +756,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "58219b370bd347b20d7c0f84260d12714759b2e1"
+                "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/58219b370bd347b20d7c0f84260d12714759b2e1",
-                "reference": "58219b370bd347b20d7c0f84260d12714759b2e1",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0c15c11264d1feed731976b596dd74d1129a7cc6",
+                "reference": "0c15c11264d1feed731976b596dd74d1129a7cc6",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-10-23 09:32:37"
+            "time": "2016-10-24 08:47:23"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2904,12 +2904,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "409c90a58a0018aab219a9b521cfb57483596474"
+                "reference": "f207b4a855fc971241d7084b923ff2e78096104b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/409c90a58a0018aab219a9b521cfb57483596474",
-                "reference": "409c90a58a0018aab219a9b521cfb57483596474",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f207b4a855fc971241d7084b923ff2e78096104b",
+                "reference": "f207b4a855fc971241d7084b923ff2e78096104b",
                 "shasum": ""
             },
             "require": {
@@ -2946,7 +2946,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2016-10-20 13:01:38"
+            "time": "2016-10-24 07:55:38"
         },
         {
             "name": "hamcrest/hamcrest-php",

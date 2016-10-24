@@ -10,11 +10,11 @@
         </ul>
     @endif
 
-    {!! Form::model($user, ['route'=>['admin.users.update', $user->id], 'method' => 'put']) !!}
+    {!! Form::open(['route'=> ['admin.user.update',$user->id], 'method'=>'put']) !!}
 
     <div class="form-group">
         {!! Form::label('is_admin', 'Admin:') !!}
-        {!! Form::checkbox('is_admin') !!}
+        {!! Form::checkbox('is_admin', $user->name) !!}
     </div>
     <div class="form-group">
         {!! Form::submit('Save User', ['class'=>'btn btn-primary']) !!}

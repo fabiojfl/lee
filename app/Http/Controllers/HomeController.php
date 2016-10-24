@@ -32,15 +32,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-	//$userId = Auth::user()->id;
-	//$orders = $this->order->where('user_id', auth()->user()->id )->get();
+	$userId = Auth::user()->id;
+	$userOrders = $this->order->where('user_id', auth()->user()->id )->get();
 	
 	//Aula 06 - Iniciando ACL com Laravel	parou 10:00
 	$orders = $this->order->all();
 	//$this->authorize('admin-order', $orders);
         $categories = $this->category->all();
 
-        return view('home',compact('orders', 'categories'));
+        return view('home',compact('orders', 'categories', 'userOrders'));
     }
 
     public function update($idOrder)

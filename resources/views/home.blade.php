@@ -36,10 +36,6 @@
 
 						<div class="profile-usertitle">
 							<div class="profile-usertitle-name">
-
-
-
-
 								<h2>Olá,{{ Auth::user()->name }}.</h2>
 
 							</div>
@@ -92,7 +88,7 @@
 								<th>Status do Pedido</th>
 								<th>Visualizar Pedido</th>
 							</tr>
-							@foreach($orders as $order)
+							@foreach($userOrders as $order)
 								<tr>
 									<td>{{$order->updated_at}}</td>
 									<td>{{$order->status}}</td>
