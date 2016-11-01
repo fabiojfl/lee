@@ -18,6 +18,11 @@ class Order extends Model
         return $this->hasMany('CodeCommerce\OrderItem');
     }
 
+    public function item()
+    {
+        return $this->hasMany('CodeCommerce\OrderItem');
+    }
+
     public function user()
     {
         return $this->belongsTo('CodeCommerce\User');

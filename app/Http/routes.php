@@ -58,7 +58,6 @@ Route::get('newsletters/create',['as'=>'admin.newsletters.create','uses'=> 'Admi
 Route::post('newsletters/create',['as'=>  'admin.newsletters.store','uses'=>'AdminNewsletterController@store']);
 Route::get('newsletters/message',['as'=>'admin.newsletters.message','uses'=> 'AdminNewsletterController@message']);
 
-
 Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 
 	Route::group(['prefix' => 'categories/'], function(){
@@ -127,6 +126,17 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('{id}/destroy', 	['as' => 'admin.users.destroy', 'uses' => 'AdminUsersController@destroy']);
 	});
 
+	Route::group(['prefix'=> 'supports'],function(){
+		Route::get('', 				['as' => 'admin.supports.index', 	'uses' => 'AdminSupportsController@index']);
+		Route::get('messge', 		['as' => 'admin.supports.message', 	'uses' => 'AdminSupportsController@message']);
+		Route::get('{id}/show', 	['as' => 'admin.supports.show', 	'uses' => 'AdminSupportsController@show']);
+		Route::get('create', 		['as' => 'admin.supports.create', 	'uses' => 'AdminSupportsController@create']);
+		Route::post('store', 		['as' => 'admin.supports.store', 	'uses' => 'AdminSupportsController@store']);
+		Route::get('{id}/edit', 	['as' => 'admin.supports.edit', 	'uses' => 'AdminSupportsController@edit']);
+		Route::put('{id}/update', 	['as' => 'admin.supports.update', 	'uses' => 'AdminSupportsController@update']);
+		Route::get('{id}/destroy', 	['as' => 'admin.supports.destroy',  'uses' => 'AdminSupportsController@destroy']);
+
+	});
 });
 
 Route::controllers([

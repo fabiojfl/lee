@@ -2,6 +2,7 @@
 
 namespace CodeCommerce\Http\Controllers;
 
+use CodeCommerce\OrderItem;
 use Illuminate\Http\Request;
 
 use CodeCommerce\Http\Requests;
@@ -14,9 +15,10 @@ class AdminOrdersController extends Controller
     private $order;
     private $items;
     
-    public function __construct(Order $order)
+    public function __construct(Order $order, OrderItem $items)
     {
     	$this->order = $order;
+        $this->items = $items;
     }
     
     public function index()
@@ -40,16 +42,11 @@ class AdminOrdersController extends Controller
 
     public function show($id)
     {
-/*
-        $orders  = $this->order
-            ->join('orders', 'users.id', '=', 'order_items.order_id')
-            ->join('order_items', $id, '=', 'products.order_id')
-            ->select('*')
-            ->get();
+        //$order = $this->order->find($id);
+        $orderItems = $this->items->where('order_id', '=', $id)->get();
+        $orderItem = $this->items->find($id);
 
-        		//= $this->order->find($id);
-*/
-        return view('admin.orders.show', compact('orders'));
+        return view('admin.orders.show', compact('order','orderItems','orderItem'));
     }
 
 }

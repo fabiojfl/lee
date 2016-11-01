@@ -28,6 +28,8 @@
                                     </span>
                                 @endif
                             </div>
+
+                            <!--
                             <a class="news-letter" href="{{ url('/password/reset') }}">Esqueceu a senha?</a>
                             
                             <!-- <a class=" " href="#">

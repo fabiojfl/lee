@@ -26,7 +26,7 @@
 					<li class="subitem1"><a href="{{ route('admin.orders.index') }}	">Listar Pedidos</a></li>
 				</ul>
 			</li>
-			<li class="item5"><a href="#">Gerencia de usuários</a>
+			<li class="item5"><a href="#">Gerencia de emails</a>
 
 				<ul class="cute">
 					<li class="subitem1"><a href="{{ route('admin.newsletters.index') }}">Newsletter</a></li>
@@ -37,8 +37,11 @@
 					<li class="subitem1"><a href="{{ route('admin.users.index') }}">Usuários do sistema</a></li>
 				</ul>
 			</li>
-
-
+			<li class="item6"><a href="#">Help Desk</a>
+				<ul class="cute">
+					<li class="subitem1"><a href="{{ route('admin.supports.index') }}">Lista de chamados</a></li>
+				</ul>
+			</li>
 		</ul>
 	</div>
 	@endcan
