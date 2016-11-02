@@ -67,10 +67,29 @@
 					<td>
 					 {!! Form::open(['route'=>['store.cart.update', $k], 'method'=>'put']) !!}
                     	<div class="input-group" style="width: 120px">
-                    	{!! Form::text('qtd', $item['qtd'], ['class'=>'form-control']) !!}
-                    		<span class="input-group-btn">
+							<?php
+
+							$qitem = $item['qtd'];
+
+							if ($qitem > 15)
+							{
+								echo "Pedimos desculpas. Porque, temos disponível apenas a quantidade de 15 produtos";
+
+							} else{
+
+							?>
+								{!! Form::text('qtd', $item['qtd'], ['class'=>'form-control']) !!}
+								<span class="input-group-btn">
 								{!! Form::submit('Alterar', ['class'=>'btn btn-default']) !!}
-							</span>
+								</span>
+
+							<?php } ?>
+
+
+
+
+
+
 						</div><!-- /input-group -->
 					{!! Form::close() !!}
 					

@@ -137,6 +137,18 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('{id}/destroy', 	['as' => 'admin.supports.destroy',  'uses' => 'AdminSupportsController@destroy']);
 
 	});
+
+	Route::group(['prefix'=> 'stocks'],function(){
+		Route::get('', 				['as' => 'admin.stocks.index', 		'uses' => 'AdminStocksController@index']);
+		Route::get('messge', 		['as' => 'admin.stocks.message', 	'uses' => 'AdminStocksController@message']);
+		Route::get('{id}/show', 	['as' => 'admin.stocks.show', 		'uses' => 'AdminStocksController@show']);
+		Route::get('create', 		['as' => 'admin.stocks.create', 	'uses' => 'AdminStocksController@create']);
+		Route::post('store', 		['as' => 'admin.stocks.store', 		'uses' => 'AdminStocksController@store']);
+		Route::get('{id}/edit', 	['as' => 'admin.stocks.edit', 		'uses' => 'AdminStocksController@edit']);
+		Route::put('{id}/update', 	['as' => 'admin.stocks.update', 	'uses' => 'AdminStocksController@update']);
+		Route::get('{id}/destroy', 	['as' => 'admin.stocks.destroy',  	'uses' => 'AdminStocksController@destroy']);
+
+	});
 });
 
 Route::controllers([

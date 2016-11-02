@@ -1,9 +1,12 @@
 <?php
 namespace CodeCommerce\Http\Controllers;
+
 use CodeCommerce\Cart;
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Product;
 use Illuminate\Support\Facades\Session;
+
+
 class CartController extends Controller
 {
     private $cart;
