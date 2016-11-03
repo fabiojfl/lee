@@ -13,18 +13,52 @@ class Cart
         $this->items = [];
     }
 
-    public function add($id, $name, $price)
+    public function add(Product $product)
     {
+
+        $id = $product->id;
+
+        if(count($product->images))
+
+            $img = 'uploads/'.$product->images->first()->id.'.'.$product->images->first()->extension;
+        else
+            $img = 'images/no-img.jpg';
+
         $this->items += [
+            $id => [
+                'qtd' => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']++ : 1,
+                'price' => $product->price,
+                'name' => $product->name,
+                'image' => $img,
+            ]
+        ];
+
+            return $this->items;
+
+
+
+
+     /*
+        if (isset($qtdvl) > isset($this->items['qtd'])){
+
+            $this->items += [
             $id =>
                 [
                     'qtd'   => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']++ : 1,
                     'sale' => $price,
                     'name'  => $name
                 ]
-        ];
+            ];
 
         return $this->items;
+
+        }else {
+
+            return "problemas";
+
+        }
+
+    */
     }
 
     public function edit($id,$name,$price,$qtd)
@@ -46,6 +80,8 @@ class Cart
     {
         unset($this->items[$id]);
     }
+
+
 
     public function all()
     {

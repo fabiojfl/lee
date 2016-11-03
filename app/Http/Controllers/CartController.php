@@ -1,42 +1,47 @@
 <?php
+
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Cart;
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Product;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
-
 
 class CartController extends Controller
 {
     private $cart;
-    private $product;
-    public function __construct(Cart $cart, Product $product)
-    {
-        $this->cart     = $cart;
-        $this->product  = $product;
 
+    /**
+     * CartController constructor.
+     * @param Cart $cart
+     */
+    public function __construct(Cart $cart)
+    {
+        $this->cart = $cart;
     }
+
     public function index()
     {
-        if(!Session::has('cart'))
-        {
+        if(!Session::has('cart')){
             Session::set('cart', $this->cart);
         }
 
-
-        return view('store.cart', ['cart' => Session::get('cart')]);
+        return view('store.cart', ['cart'=>Session::get('cart')]);
     }
+
     public function add($id)
     {
         $cart = $this->getCart();
-        $product = $this->product->find($id);
-        $cart->add($id, $product->name, $product->sale);
-        Session::set('cart', $cart);
 
+        $product = Product::find($id);
+        $cart->add($product);
+
+        Session::set('cart', $cart);
 
         return redirect()->route('store.cart');
     }
+
     public function destroy($id)
     {
         $cart = $this->getCart();
@@ -46,6 +51,7 @@ class CartController extends Controller
 
         return redirect()->route('store.cart');
     }
+
     /**
      * @return Cart
      */
@@ -56,18 +62,18 @@ class CartController extends Controller
         } else {
             $cart = $this->cart;
         }
+
         return $cart;
     }
-
 
     public function update(Requests\CartRequest $request, $id)
     {
         $qtd = $request->get("qtd");
-
         $cart = $this->getCart();
         $cart->setQtd($id, $qtd);
 
         Session::set('cart', $cart);
+
         return redirect()->route('store.cart');
     }
 }
