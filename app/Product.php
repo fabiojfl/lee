@@ -9,6 +9,7 @@ class Product extends Model {
         'description',
         'price',
         'sale',
+        'prodqtd',
         'featured',
         'recommend',
         'category_id'

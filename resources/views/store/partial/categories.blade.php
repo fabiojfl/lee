@@ -21,12 +21,6 @@
 					<li class="subitem1"><a href="{{ route('admin.products.index') }}">Listar produtos e imagens</a></li>
 				</ul>
 			</li>
-			<li class="item3"><a href="#">Mercadoria</a>
-				<ul class="cute">
-					<li class="subitem1"><a href="{{ route('admin.stocks.index') }}">Listar Mercadoria</a></li>
-					<li class="subitem1"><a href="{{ route('admin.stocks.create') }}">Adicionar Mercadoria</a></li>
-				</ul>
-			</li>
 			<li class="item4"><a href="#">Pedidos</a>
 				<ul class="cute">
 					<li class="subitem1"><a href="{{ route('admin.orders.index') }}	">Listar Pedidos</a></li>

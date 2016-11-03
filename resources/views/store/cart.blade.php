@@ -45,7 +45,7 @@
 		    <table class="table-heading simpleCart_shelfItem">
 		    @forelse($cart->all() as $k=>$item)
 				  <tr>
-					<th class="table-grid">Item</th>							
+					<th class="table-grid">Item</th>
 					<th>Valor Unidade</th>
 					<th >Quantidade</th>
 					<th>Subtotal</th>
@@ -55,10 +55,10 @@
 					<div class="sed">
 						<h5><a href="{{route('store.product', ['id' => $k ])}}">{{$item['name']}}</a></h5>
 						<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-						
+
 
 					</div>
-					<!-- 
+					<!--
 					<div class="clearfix"> </div>
 					<div class="close1"> </div>
 					 -->
@@ -67,35 +67,20 @@
 					<td>
 					 {!! Form::open(['route'=>['store.cart.update', $k], 'method'=>'put']) !!}
                     	<div class="input-group" style="width: 120px">
-							<?php
 
-							$qitem = $item['qtd'];
-
-							if ($qitem > 15)
-							{
-								echo "Pedimos desculpas. Porque, temos disponível apenas a quantidade de 15 produtos";
-
-							} else{
-
-							?>
 								{!! Form::text('qtd', $item['qtd'], ['class'=>'form-control']) !!}
 								<span class="input-group-btn">
 								{!! Form::submit('Alterar', ['class'=>'btn btn-default']) !!}
 								</span>
 
-							<?php } ?>
-
-
-
-
-
 
 						</div><!-- /input-group -->
 					{!! Form::close() !!}
-					
+
 					</td>
+
 					<td class="item_price">R$ {{number_format($item['sale'],2 , "," , ".") * $item['qtd']}}</td>
-					
+
 				  </tr>
 				   @empty
                         <tr>

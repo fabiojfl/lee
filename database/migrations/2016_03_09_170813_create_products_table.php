@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration {
 			$table->text('description');
 			$table->decimal('price');
 			$table->decimal('sale');
+			$table->integer('prodqtd');
 			$table->boolean('featured')->nullable();
 			$table->boolean('recommend')->nullable();
 			$table->timestamps();

@@ -15,6 +15,7 @@ class CartController extends Controller
     {
         $this->cart     = $cart;
         $this->product  = $product;
+
     }
     public function index()
     {
@@ -22,6 +23,8 @@ class CartController extends Controller
         {
             Session::set('cart', $this->cart);
         }
+
+
         return view('store.cart', ['cart' => Session::get('cart')]);
     }
     public function add($id)
@@ -30,6 +33,8 @@ class CartController extends Controller
         $product = $this->product->find($id);
         $cart->add($id, $product->name, $product->sale);
         Session::set('cart', $cart);
+
+
         return redirect()->route('store.cart');
     }
     public function destroy($id)
@@ -53,6 +58,8 @@ class CartController extends Controller
         }
         return $cart;
     }
+
+
     public function update(Requests\CartRequest $request, $id)
     {
         $qtd = $request->get("qtd");

@@ -20,6 +20,12 @@
             <span>{!! Form::label('sale','Promoção:') !!}</span>
     	{!! Form::text('sale', null, ['class'=>'form-control', 'id'=>'']) !!}
                 </div>
+
+    <div>
+        <span>{!! Form::label('prodqtd','Qtd Estoque:') !!}</span>
+        {!! Form::text('prodqtd', null, ['class'=>'form-control', 'id'=>'']) !!}
+    </div>
+
     <div>
     <span>{!! Form::label('featured','Featured:') !!}</span>
     {!! Form::checkbox('featured', null, ['class'=>'form-control']) !!}
