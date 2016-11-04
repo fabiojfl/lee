@@ -45,32 +45,33 @@
 		    <table class="table-heading simpleCart_shelfItem">
 		    @forelse($cart->all() as $k=>$item)
 				  <tr>
-					<th class="table-grid">Item</th>
-					<th>Valor Unidade</th>
+					<th class="table-grid"></th>
+					<th>Unidade</th>
 					<th >Quantidade</th>
 					<th>Subtotal</th>
 				  </tr>
+
 				  <tr class="cart-header">
 					<td class="ring-in"><a href="{{ route('store.product', ['id'=>$k]) }}" class="at-in">
-							<img src="images/{{$item['image']}}" class="img-responsive" alt=""></a>
-					<div class="sed">
+							<img src="{{url($item['image'])}}" class="img-responsive" >
+						<div class="sed">
+							<h5><a href="{{route('store.product', ['id' => $k ])}}">{{$item['name']}}</a></h5>
+							<p>{{substr($item['description'], -63)}}...</p>
+						</div>
+						<div class="clearfix"> </div>
 
-						<h5><a href="{{route('store.product', ['id' => $k ])}}">{{$item['name']}}</a></h5>
-						<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-
-
-					</div>
-					<!--
-					<div class="clearfix"> </div>
-					<div class="close1"> </div>
-					 -->
+					  <a href="{{ route('store.cart.destroy', ['id'=>$k]) }}" class="cart_quantity_button"><div class="close1"> </div></a>
 					</td>
+
 					<td> R$ {{number_format($item['sale'],2 , "," , ".")}}</td>
 					<td>
 					 {!! Form::open(['route'=>['store.cart.update', $k], 'method'=>'put']) !!}
                     	<div class="input-group" style="width: 120px">
 
 								{!! Form::text('qtd', $item['qtd'], ['class'=>'form-control']) !!}
+
+								{!! Form::hidden('prodqtd', $item['prodqtd']) !!}
+
 								<span class="input-group-btn">
 								{!! Form::submit('Alterar', ['class'=>'btn btn-default']) !!}
 								</span>

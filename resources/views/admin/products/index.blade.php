@@ -12,10 +12,11 @@
                         <table class="table">
                                 <tr>
                                         <th>ID</th>
-                                        <th>Categoria</th>
+                                        <th>Cat</th>
                                         <th>Nome</th>
-                                        <th>Volor da unidade</th>
-                                        <th>Valor da Promoção</th>
+                                        <th>Volor Unid.</th>
+                                        <th>Valor Prom.</th>
+                                        <th>Qtd</th>
                                         <th>Ações</th>
                                 </tr>
                                 @foreach($products as $product)
@@ -25,6 +26,7 @@
                                                 <td>{{$product->name}}</td>
                                                 <td><b>R$</b>&nbsp; {{number_format($product->price,2 , "," , ".")}}</td>
                                                 <td><b>R$</b>&nbsp; {{number_format($product->sale,2 , "," , ".")}}</td>
+                                                <td>{{$product->prodqtd}}</td>
                                                 <td>
                                                         <a href="{{ route('admin.products.edit',['id'=> $product->id]) }}">
                                                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

@@ -16,9 +16,10 @@ class CartController extends Controller
      * CartController constructor.
      * @param Cart $cart
      */
-    public function __construct(Cart $cart)
+    public function __construct(Cart $cart, Product $product)
     {
         $this->cart = $cart;
+        $this->product = $product;
     }
 
     public function index()
@@ -33,7 +34,6 @@ class CartController extends Controller
     public function add($id)
     {
         $cart = $this->getCart();
-
         $product = Product::find($id);
         $cart->add($product);
 
@@ -69,8 +69,9 @@ class CartController extends Controller
     public function update(Requests\CartRequest $request, $id)
     {
         $qtd = $request->get("qtd");
+        $prodqtd = $request->get("prodqtd");
         $cart = $this->getCart();
-        $cart->setQtd($id, $qtd);
+        $cart->setQtd($id, $qtd, $prodqtd);
 
         Session::set('cart', $cart);
 
