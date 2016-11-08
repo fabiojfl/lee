@@ -43,6 +43,11 @@
 	<div class="bs-example4" data-example-id="simple-responsive-table">
 	    <div class="table-responsive">
 		    <table class="table-heading simpleCart_shelfItem">
+
+
+				<div id="resultado"></div>
+
+
 		    @forelse($cart->all() as $k=>$item)
 				  <tr>
 					<th class="table-grid"></th>
@@ -81,15 +86,13 @@
 					{!! Form::close() !!}
 
 					</td>
-					<?php
 
-
-
-
-					?>
 					<td class="item_price">R$ {{number_format($item['sale'],2 , "," , ".") * $item['qtd']}}</td>
 
 				  </tr>
+				<tr>
+
+				</tr>
 				   @empty
                         <tr>
                             <td class="text-center" colspan="7">
@@ -108,6 +111,12 @@
 		</div>
     </div>
     <br>
+
+	<td>
+		<div id="show-data"></div>
+
+	</td>
+
     <div class="produced">
 		<a href="{{ route('store.checkout.place') }}" class="btn hvr-skew-backward">Fechar a conta</a>
 	</div>

@@ -32,6 +32,8 @@ Route::get('cart/add/{id}',         ['as'=> 'store.cart.add', 'uses'=>'CartContr
 Route::get('cart/destroy/{id}',     ['as'=> 'store.cart.destroy', 'uses'=>'CartController@destroy']);
 Route::put('cart/update/{id}',      ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
 
+Route::get('cart/frete', 'CartController@frete');
+
 //Route::get('profile/show/{id}',['as'=>'store.profile.show','users'=>'AdminProfilesController@show']);
 
 Route::group(['prefix'=>'register', 'as'=>'register.'], function(){
