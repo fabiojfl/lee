@@ -97,22 +97,36 @@
 	</div>
 	<!-- end menu -->
 	<!--content slide-->
-	
-
-</div>
-
-
-
-	<div class="banner-top">
+	<div class="content">
 		<div class="container">
-		<!--
-			<h1>Products</h1>
-			<em></em>
-			<h2><a href="index.html">Home</a><label>/</label>Products</a></h2>
-			-->
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="3"></li>
+				</ol>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="../images/promocoes/combo_Linha Intense_Color.jpg" alt="">
+					</div>
+					<div class="item banner-lee">
+						<img src="../images/promocoes/gold.jpg" alt="Chania">
+					</div>
+					<div class="item">
+						<img src="../images/promocoes/platinum.jpg" alt="">
+					</div>
+					<div class="item">
+						<img src="../images/promocoes/sliver.jpg" alt="Flower">
+					</div>
+				</div>
+				<!-- End Wrapper for slides -->
+			</div>
 		</div>
 	</div>
-	
+</div>
 	<!--content-->
 	<div class="content">
 		<div class="container">

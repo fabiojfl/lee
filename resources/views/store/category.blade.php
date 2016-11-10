@@ -1,5 +1,4 @@
 @extends('store.store')
-
 @section('content')
     <div class="col-sm-9 padding-right">
         <div class="features_items"><!--features_items-->
@@ -8,8 +7,6 @@
         </div><!--features_items-->
     </div>
 @stop
-
-
 @section('categories')
     @include('store.partial.categories')
 @stop
