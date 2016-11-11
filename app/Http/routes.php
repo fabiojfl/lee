@@ -21,7 +21,13 @@ Route::get('test', 'CheckoutController@test');
 
 Route::get('/', 'StoreController@index');
 Route::get('/about' ,['as' => 'store.pages.about', 'uses' => 'StoreController@about']);
-Route::get('/contact' ,['as' => 'store.pages.contact', 'uses' => 'StoreController@contact']);
+
+
+Route::get('/contact'  ,['as' => 'store.pages.contact', 'uses' => 'ContactController@create']);
+Route::post('/store'   ,['as' => 'store.pages.store',   'uses' => 'ContactController@store']);
+
+
+
 
 //Route::get('/home', )
 Route::get('/product-categories/{id}' ,['as' => 'store.product_categories.products', 'uses' => 'StoreController@product_category']);

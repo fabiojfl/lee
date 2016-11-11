@@ -56,25 +56,38 @@
 				</div>
 				<div class="col-md-6 contact-top">
 					<h3>Gostaria de entrar em contato?</h3>
-					<form>
+				@if(Session::has('flash_message'))
+					<div class="alert alert-success">
+					{{ Session::get('flash_message') }}
+					</div>
+				@endif	
+					 @if($errors->any())
+						@foreach($errors->all() as $error)
+							<div class="alert alert-danger">
+								<strong>Error:</strong>{{$error}}
+							</div>
+						@endforeach
+					@endif
+					{!! Form::open(['route'=>'store.pages.store','method'=>'post']) !!}
+				
 						<div>
 							<span>Seu nome </span>		
-							<input type="text" value="" >						
+							{!! Form::text('name', null, ['class'=>'form-control']) !!}						
 						</div>
 						<div>
 							<span>Seu Email </span>		
-							<input type="text" value="" >						
+							{!! Form::text('email', null, ['class'=>'form-control']) !!}						
 						</div>
 						<div>
 							<span>Assunto</span>		
-							<input type="text" value="" >	
+							{!! Form::text('subject', null, ['class'=>'form-control']) !!}						
 						</div>
 						<div>
 							<span>Sua mensagem</span>		
-							<textarea> </textarea>	
+							{!! Form::textarea('description', null, ['class'=>'form-control']) !!}	
 						</div>
 						<label class="hvr-skew-backward">
-								<input type="submit" value="Enviar" >
+							{!! Form::submit('Enviar') !!}
 						</label>
 </form>						
 				</div>
