@@ -24,12 +24,10 @@ class ContactRequest extends Request
     public function rules()
     {
         return [
-		'name'=>'required',
+		'nome'=>'required',
 		'email'=>'required',
 		
-		'description'=>'required',
-		
-            
+		'mensagem'=>'required',	
         ];
     }
 }

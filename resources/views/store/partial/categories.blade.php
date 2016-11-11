@@ -27,8 +27,8 @@
 				</ul>
 			</li>
 			<li class="item5"><a href="#">Gerencia de emails</a>
-
 				<ul class="cute">
+					<li class="subitem1"><a href="{{ route('admin.contacts.index') }}">Contatos Externos</a></li>
 					<li class="subitem1"><a href="{{ route('admin.newsletters.index') }}">Newsletter</a></li>
 				</ul>
 			</li>

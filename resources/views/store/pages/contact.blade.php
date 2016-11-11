@@ -56,15 +56,15 @@
 				</div>
 				<div class="col-md-6 contact-top">
 					<h3>Gostaria de entrar em contato?</h3>
-				@if(Session::has('flash_message'))
-					<div class="alert alert-success">
-					{{ Session::get('flash_message') }}
-					</div>
-				@endif	
+					@if(Session::has('flash_message'))
+						<div class="alert alert-success">
+						{{ Session::get('flash_message') }}
+						</div>
+					@endif	
 					 @if($errors->any())
 						@foreach($errors->all() as $error)
 							<div class="alert alert-danger">
-								<strong>Error:</strong>{{$error}}
+								<strong>{{$error}}</strong>
 							</div>
 						@endforeach
 					@endif

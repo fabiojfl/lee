@@ -29,6 +29,7 @@ Route::post('/store'   ,['as' => 'store.pages.store',   'uses' => 'ContactContro
 
 
 
+
 //Route::get('/home', )
 Route::get('/product-categories/{id}' ,['as' => 'store.product_categories.products', 'uses' => 'StoreController@product_category']);
 
@@ -161,6 +162,11 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('{id}/destroy', 	['as' => 'admin.stocks.destroy',  	'uses' => 'AdminStocksController@destroy']);
 
 	});
+	Route::group(['prefix'=> 'contacts'],function(){
+		Route::get(''   ,['as' => 'admin.contacts.index',   'uses' => 'ContactController@index']);
+		Route::get('show/{id}'   ,['as' => 'admin.contacts.show',   'uses' => 'ContactController@show']);
+		
+	});	
 });
 
 Route::controllers([
