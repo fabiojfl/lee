@@ -6,20 +6,20 @@ use CodeCommerce\Order;
 use CodeCommerce\Product;
 use Illuminate\Http\Request;
 use CodeCommerce\SubCategory;
-
-
+use Session;
 
 class AdminCategoriesController extends Controller {
 
 	private $category;
     private $product;
     private $order;
+	
     
     public function __construct(Category $category, Product $product, Order $order)
     {
         $this->category = $category;
-        $this->product = $product;
-        $this->order = $order;
+        $this->product 	= $product;
+        $this->order 	= $order;	
     }
 
     public function index()
@@ -43,6 +43,8 @@ class AdminCategoriesController extends Controller {
         $input = $request->all();
         $category = $this->category->fill($input);
         $category->save();
+		
+		Session::flash('flash_message','Categoria de produtos criada.');
         return redirect()->route('admin.categories.index');
     }
 

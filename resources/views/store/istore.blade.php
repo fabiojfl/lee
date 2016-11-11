@@ -86,9 +86,9 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1">
-							<li><a class="color4" href="404.html">A Leelee</a></li>
-							<li ><a class="color6" href="contact.html">Promoções</a></li>
-							<li ><a class="color6" href="contact.html">Atendimento</a></li>
+							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
+							<li ><a class="color6" href="{{url('/about')}}">Promoções</a></li>
+							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 				</nav>
@@ -167,8 +167,9 @@
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-12 footer-middle-in text-center">
-						<a href="index.html"><img src="{{ asset('images/log.png') }}" alt=""></a>
-						<p>A empresa de cosméticos que ....</p>
+						<a href="{{url('/about')}}"><img src="{{ asset('images/log.png') }}" alt="">
+							<p>A Leelee Cosméticos defende ....</p>
+						</a>
 					</div>
 					<!--
 					<div class="col-md-3 footer-middle-in">

@@ -100,18 +100,6 @@
 	
 
 </div>
-
-
-
-	<div class="banner-top">
-		<div class="container">
-		<!--
-			<h1>Products</h1>
-			<em></em>
-			<h2><a href="index.html">Home</a><label>/</label>Products</a></h2>
-			-->
-		</div>
-	</div>
 	
 	<!--content-->
 	<div class="content">
@@ -119,11 +107,6 @@
 		<!--products-->
 			<div class="product">
 				<div class="container">
-				@if(Session::has('flash_message'))
-					<div class="alert alert-success">
-					{{ Session::get('flash_message') }}
-					</div>
-				@endif	
 				@yield('content')
 				@yield('categories')
 				</div>

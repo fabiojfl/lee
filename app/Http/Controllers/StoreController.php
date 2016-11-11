@@ -30,6 +30,14 @@ class StoreController extends Controller
 		return view('store.index', compact('categories', 'pFeatured', 'pRecommended'));
 	}
 
+	public function home()
+	{
+		$categories   = $this->category->all();
+		$pFeatured    = $this->product->featured()->get();
+		$pRecommended = $this->product->recommended()->get();
+
+		return view('store.istore', compact('categories', 'pFeatured', 'pRecommended'));
+	}
 	public function category($id)
 	{
 		$categories  = $this->category->all();
@@ -40,7 +48,6 @@ class StoreController extends Controller
 
 	}
 	
-
 	public function product($id)
 	{
 		$categories = $this->category->all();
@@ -48,6 +55,20 @@ class StoreController extends Controller
 		$tags  = $this->tag->all();
 
 		return view('store.product',compact('categories','product','tags'));
+	}
+	
+	public function about()
+	{
+		$categories = $this->category->all();
+		
+		return view('store.pages.about', compact('categories'));
+	}
+	
+	public function contact()
+	{
+		$categories = $this->category->all();
+		
+		return view('store.pages.contact', compact('categories'));
 	}
 
 
