@@ -22,7 +22,7 @@ class ProductImageRequest extends Request {
 	public function rules()
 	{
 		return [
-			'image' => 'image'
+			'image' => 'required'
 		];
 	}
 

@@ -48,6 +48,8 @@
                         <input type="text" placeholder="Endereço"   required="" name="endereco" id="rua">
                         <i  class="glyphicon glyphicon-road"></i>
                     </div>
+
+
                     <div class="login-mail">
                         <input type="text" placeholder="Destinatário"  name="destinatario">
                         <i  class="glyphicon glyphicon-user"></i>

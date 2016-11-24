@@ -19,6 +19,4 @@ function getAddress() {
         $('#state').val("");
         $('#msgmCep').html("<p class='alert alert-danger'>Insira um CEP</p>");
     }
-
-
 }

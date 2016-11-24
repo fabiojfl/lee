@@ -13,29 +13,67 @@ class Cart
         $this->items = [];
     }
 
-    public function add($id, $name, $price)
+    public function add(Product $product)
     {
+
+        $id = $product->id;
+
+        if(count($product->images))
+
+            $img = 'uploads/'.$product->images->first()->id.'.'.$product->images->first()->extension;
+
+        else
+            $img = 'images/sem-imagem.jpg';
+
         $this->items += [
+            $id => [
+                'qtd' => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']++ : 1,
+                'sale' => $product->sale,
+                'name' => $product->name,
+                'description' => $product->description,
+                'image' => $img,
+                'prodqtd' => $product->prodqtd,
+            ]
+        ];
+
+            return $this->items;
+
+
+
+
+     /*
+        if (isset($qtdvl) > isset($this->items['qtd'])){
+
+            $this->items += [
             $id =>
                 [
                     'qtd'   => isset($this->items[$id]['qtd']) ? $this->items[$id]['qtd']++ : 1,
                     'sale' => $price,
                     'name'  => $name
                 ]
-        ];
+            ];
 
         return $this->items;
+
+        }else {
+
+            return "problemas";
+
+        }
+
+    */
     }
 
-    public function edit($id,$name,$price,$qtd)
+    public function edit($id,$name,$sale,$qtd,$prodqtd)
     {
         $this->items += [
 
             $id =>
                 [
                     'qtd'   => isset($this->items[$id][$qtd]) ? $this->items[$id][$qtd]++ : 1,
-                    'sale' => $price,
-                    'name'  => $name
+                    'sale' => $sale,
+                    'name'  => $name,
+                    'prodqtd' => $prodqtd,
                 ]
         ];
 
@@ -46,6 +84,8 @@ class Cart
     {
         unset($this->items[$id]);
     }
+
+
 
     public function all()
     {
@@ -62,11 +102,15 @@ class Cart
         return $total;
     }
     
-    public function setQtd($id, $qtd)
+    public function setQtd($id, $qtd, $prodqtd)
+
     {
-    	if($qtd > 0){
-    		$this->items[$id]['qtd'] = $qtd;
-    	}
+    	if($qtd <= $prodqtd){
+                $this->items[$id]['qtd'] = $qtd;
+    	} else {
+            return "ops";
+        }
+
     }
     
 	public function clear()

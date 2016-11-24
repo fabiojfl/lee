@@ -6,9 +6,13 @@ class Product extends Model {
 
     protected $fillable = [
         'name',
+		'quickoverview',
         'description',
+		'addinformation',
+		'mainsentence',
         'price',
         'sale',
+        'prodqtd',
         'featured',
         'recommend',
         'category_id'
@@ -27,6 +31,16 @@ class Product extends Model {
     public function images()
     {
         return $this->hasMany('CodeCommerce\ProductImage');
+    }
+	
+	public function homeSlide()
+    {
+        return $this->hasMany('CodeCommerce\ProductSlideHome');
+    }
+	
+	public function features()
+    {
+        return $this->hasMany('CodeCommerce\Features');
     }
 
     public function getNameDescriptionAttribute()

@@ -20,17 +20,27 @@ Route::get('home',['as' => 'home', 'uses' => 'HomeController@index']);
 Route::get('test', 'CheckoutController@test');
 
 Route::get('/', 'StoreController@index');
+Route::get('/about' ,['as' => 'store.pages.about', 'uses' => 'StoreController@about']);
+
+
+Route::get('/contact'  ,['as' => 'store.pages.contact', 'uses' => 'ContactController@create']);
+Route::post('/store'   ,['as' => 'store.pages.store',   'uses' => 'ContactController@store']);
+
+//Route::get('/home', )
 Route::get('/product-categories/{id}' ,['as' => 'store.product_categories.products', 'uses' => 'StoreController@product_category']);
 
 Route::get('home', 'HomeController@index');
 
 Route::get('category/{id}', ['as' => 'store.category', 'uses'=>'StoreController@category']);
 Route::get('product/{id}', ['as' => 'store.product', 'uses'=>'StoreController@product']);
+Route::get('sale/{id}'   , ['as' => 'store.sale', 'uses'=>'StoreController@sale']);
 
 Route::get('cart',                  ['as'=> 'store.cart', 'uses'=>'CartController@index']);
 Route::get('cart/add/{id}',         ['as'=> 'store.cart.add', 'uses'=>'CartController@add']);
 Route::get('cart/destroy/{id}',     ['as'=> 'store.cart.destroy', 'uses'=>'CartController@destroy']);
 Route::put('cart/update/{id}',      ['as' => 'store.cart.update', 'uses' => 'CartController@update']);
+
+Route::get('cart/frete', 'CartController@frete');
 
 //Route::get('profile/show/{id}',['as'=>'store.profile.show','users'=>'AdminProfilesController@show']);
 
@@ -41,23 +51,17 @@ Route::group(['prefix'=>'register', 'as'=>'register.'], function(){
 	Route::get('{id}/show', 	['as'=>	 'show', 	'uses'=>'RegisterController@show']);
 });
 
-Route::group(['middleware' => 'auth'], function(){
-	
+Route::group(['middleware' => 'auth'], function(){	
 	Route::get('checkout/placeorder', ['as' => 'store.checkout.place', 'uses' => 'CheckoutController@place']);
 	Route::get('account/orders', ['as' => 'account.orders', 'uses' => 'AccountController@orders']);
-
-
 });
 
-Route::get('dashboard/home', ['as'=>'store.dashboard.home', 'uses' => 'StoreController@dashboard']);
+//Route::get('dashboard/home', ['as'=>'store.dashboard.home', 'uses' => 'StoreController@dashboard']);
 //Route::get('',['as'=> 'dashboard','uses'=>'' ]);
-
-
 
 Route::get('newsletters/create',['as'=>'admin.newsletters.create','uses'=> 'AdminNewsletterController@create']);
 Route::post('newsletters/create',['as'=>  'admin.newsletters.store','uses'=>'AdminNewsletterController@store']);
 Route::get('newsletters/message',['as'=>'admin.newsletters.message','uses'=> 'AdminNewsletterController@message']);
-
 
 Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 
@@ -99,6 +103,17 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('create/{id}/product'  ,['as'=>'admin.products.create_image',   'uses'=>'AdminProductsController@createImage']);
 		Route::post('store/{id}/images'   ,['as'=>'admin.products.images.store',   'uses'=>'AdminProductsController@storeImage']);
 		Route::get('destroy/{id}/image'   ,['as'=>'admin.products.images.destroy', 'uses'=>'AdminProductsController@destroyImage']);
+		
+		// products features
+		Route::get('feature/{id}/product'   ,['as'=>'admin.products.features',          	'uses'=>'AdminProductsController@features']);
+		Route::get('create/{id}/feature'    ,['as'=>'admin.products.create_feature',     	'uses'=>'AdminProductsController@createFeature']);
+		Route::post('store/{id}/feature'    ,['as'=>'admin.products.features.store',    	'uses'=>'AdminProductsController@storeFeature']);
+		Route::get('destroy/{id}/feature'   ,['as'=>'admin.products.features.destroy', 		'uses'=>'AdminProductsController@destroyFeature']);
+		
+		// Products Slides
+		Route::get('images/{id}/homeSlide'     ,['as'=>'admin.slides.index',         			 'uses'=>'AdminProductsController@homeSlides']);
+		Route::get('create/{id}/homeSlide'     ,['as'=>'admin.slides.create_slide_home_image',   'uses'=>'AdminProductsController@createSlideImage']);
+		Route::post('store/{id}/homeSlide'     ,['as'=>'admin.holmeSlide.images.store',   		 'uses'=>'AdminProductsController@storeHomeSlideImage']);
 	});
 	
 	Route::group(['prefix' => 'orders'], function(){
@@ -127,6 +142,34 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('{id}/destroy', 	['as' => 'admin.users.destroy', 'uses' => 'AdminUsersController@destroy']);
 	});
 
+	Route::group(['prefix'=> 'supports'],function(){
+		Route::get('', 				['as' => 'admin.supports.index', 	'uses' => 'AdminSupportsController@index']);
+		Route::get('messge', 		['as' => 'admin.supports.message', 	'uses' => 'AdminSupportsController@message']);
+		Route::get('{id}/show', 	['as' => 'admin.supports.show', 	'uses' => 'AdminSupportsController@show']);
+		Route::get('create', 		['as' => 'admin.supports.create', 	'uses' => 'AdminSupportsController@create']);
+		Route::post('store', 		['as' => 'admin.supports.store', 	'uses' => 'AdminSupportsController@store']);
+		Route::get('{id}/edit', 	['as' => 'admin.supports.edit', 	'uses' => 'AdminSupportsController@edit']);
+		Route::put('{id}/update', 	['as' => 'admin.supports.update', 	'uses' => 'AdminSupportsController@update']);
+		Route::get('{id}/destroy', 	['as' => 'admin.supports.destroy',  'uses' => 'AdminSupportsController@destroy']);
+
+	});
+
+	Route::group(['prefix'=> 'stocks'],function(){
+		Route::get('', 				['as' => 'admin.stocks.index', 		'uses' => 'AdminStocksController@index']);
+		Route::get('messge', 		['as' => 'admin.stocks.message', 	'uses' => 'AdminStocksController@message']);
+		Route::get('{id}/show', 	['as' => 'admin.stocks.show', 		'uses' => 'AdminStocksController@show']);
+		Route::get('create', 		['as' => 'admin.stocks.create', 	'uses' => 'AdminStocksController@create']);
+		Route::post('store', 		['as' => 'admin.stocks.store', 		'uses' => 'AdminStocksController@store']);
+		Route::get('{id}/edit', 	['as' => 'admin.stocks.edit', 		'uses' => 'AdminStocksController@edit']);
+		Route::put('{id}/update', 	['as' => 'admin.stocks.update', 	'uses' => 'AdminStocksController@update']);
+		Route::get('{id}/destroy', 	['as' => 'admin.stocks.destroy',  	'uses' => 'AdminStocksController@destroy']);
+
+	});
+	Route::group(['prefix'=> 'contacts'],function(){
+		Route::get(''   ,['as' => 'admin.contacts.index',   'uses' => 'ContactController@index']);
+		Route::get('show/{id}'   ,['as' => 'admin.contacts.show',   'uses' => 'ContactController@show']);
+		
+	});	
 });
 
 Route::controllers([

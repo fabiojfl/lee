@@ -1,5 +1,4 @@
 @foreach($products as $product)
-
 <div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 						<div class="pro-img">

@@ -1,11 +1,9 @@
 /vendor
 /node_modules
+/public/uploads 
 .env
 .idea
 .project
 .settings/
 .idea/workspace.xml
 .config/database.php
-
-
-

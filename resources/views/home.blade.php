@@ -67,9 +67,9 @@
 										<span><i class="glyphicon glyphicon-send"></i></span>Receber novidades </a>
 								</li>
 								<li class="wish">
-									<a href="#">
+									<a href="{{route('admin.supports.create')}}" target="_blank">
 										<span><i class="glyphicon glyphicon-flag"></i></span>
-										Atendimento </a>
+										Suporte ao usuário</a>
 								</li>
 							</ul>
 						</div>

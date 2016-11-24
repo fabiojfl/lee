@@ -1,11 +1,16 @@
-@extends('store.store')
+@extends('store.istore')
 @section('content')
-		<div class="col-md-9">
-			<h3 class="text-left">Destaques</h3>
+		
+		<div class="col-md-9 content-mid">
+			<h3>Destaques</h3>
+			<label class="line"></label>
 			<div class="mid-popular">
 				@include('store.partial.product', ['products'=>$pFeatured])
 			</div>
-			<h3 class="text-left">Recomendados</h3>
+			<!--
+			<h3>Recomendados</h3>
+			<label class="line"></label>
+			-->
 			<div class="mid-popular">
 				@include('store.partial.product', ['products'=>$pRecommended])
 			</div>

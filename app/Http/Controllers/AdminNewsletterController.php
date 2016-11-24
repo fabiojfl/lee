@@ -31,12 +31,14 @@ class AdminNewsletterController extends Controller
 
     public function store(Request $request)
     {
+
         $this->newsletter->create($request->all());
         return redirect()->route('admin.newsletters.message');
     }
 
     public function message()
     {
+        $categories = $this->category->all();
         return view('admin.newsletters.message');
     }
 }

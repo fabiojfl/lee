@@ -236,6 +236,12 @@ a.item_add {
 .no-cssanimations .rw-wrapper .rw-sentence span:first-child{
 	opacity: 1;
 }
+
+.banner-lee{
+	background: url(../images/promocoes/combo_Linha Intense_Color.jpg)no-repeat right top;
+}
+
+
 /*--//banner--*/
 /*--content--*/
 .content-top {
@@ -585,9 +591,9 @@ a.buy-now:hover{
 .banner-top{
 	text-align:center;
 	width: 100%;
-    height: 250px;
+    height: 350px;
     display: block;
-    background: url(../images/back.jpg)no-repeat ;
+    background: url(../images/product.jpg)no-repeat ;
 	padding:5em 0;
 }
 .banner-top h1{

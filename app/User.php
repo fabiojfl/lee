@@ -53,4 +53,9 @@ class User extends Model implements AuthenticatableContract,
   {
     return $this->hasMany('CodeCommerce\Order');
   }
+
+  public function supports()
+  {
+    return $this->hasMany('CodeCommerce\Support');
+  }
 }
