@@ -8,7 +8,6 @@
         <h4>Titulo {{$support->title}}</h4>
         <p>Mensagem: {{$support->content}}</p>
     </div>
-
 @section('categories')
     @include('store.partial.categories')
 @stop

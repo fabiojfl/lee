@@ -1,6 +1,5 @@
 @extends('store.istore')
 @section('content')
-		
 		<div class="col-md-9 content-mid">
 			<h3>Destaques</h3>
 			<label class="line"></label>

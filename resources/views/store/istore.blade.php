@@ -42,6 +42,7 @@
 <!---//End-rate---->
 </head>
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" media="all" >
+
 <link href="{{ asset('css/jquery.bxslider.css') }}" rel="stylesheet" type="text/css" media="all"/>
 <body>
 <!--header-->
@@ -88,7 +89,7 @@
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1">
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
-							<li ><a class="color6" href="{{url('/about')}}">Promoções</a></li>
+							<!-- <li ><a class="color6" href="{{url('/about')}}">Promoções</a></li> -->
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
@@ -99,8 +100,7 @@
 	<!-- end menu -->
 	<!--content slide-->
 	<div class="content">
-		<div class="container">
-		
+		<div class="container">		
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				
@@ -127,23 +127,10 @@
 					<div class="item active">
 					
 					</div>
-				
-			
 					<!--
-					<div class="item banner-lee">
-						<img src="../images/promocoes/gold.jpg" alt="Chania">
-					</div>
-					<div class="item">
-						<img src="../images/promocoes/platinum.jpg" alt="">
-					</div>
-					<div class="item">
-						<img src="../images/promocoes/sliver.jpg" alt="Flower">
-					</div>
-					-->
 				</div>
 				<!-- End Wrapper for slides -->
 			</div>
-			
 		</div>
 	</div>
 </div>
@@ -312,6 +299,7 @@ showData.text('Loading the JSON file.');
 });
 </script>
 
+
 <!-- jQuery library (served from Google) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <!-- bxSlider Javascript file -->
@@ -322,10 +310,9 @@ $(document).ready(function(){
   $('.bxslider').bxSlider({
 	  auto: true,
   autoControls: true
-	  
   });
-  
 });
 </script>
+
 </body>
 </html>

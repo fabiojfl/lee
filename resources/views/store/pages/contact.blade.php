@@ -1,4 +1,4 @@
-@extends('store.store')
+﻿@extends('store.store')
 @section('content')
 
 <div class="contact">
@@ -24,6 +24,7 @@
 						-->
 						<!-- fim endereco -->
 						<!-- endereco -->
+
 						
 						<div class=" address-grid ">
 							<i class="glyphicon glyphicon-phone"></i>
@@ -34,6 +35,7 @@
 							<div class="clearfix"> </div>
 						</div>
 						
+
 						<!-- fim endereco -->
 						<div class=" address-grid ">
 							<i class="glyphicon glyphicon-envelope"></i>

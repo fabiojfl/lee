@@ -50,6 +50,7 @@ class StoreController extends Controller
 		
 		return view('store.istore', compact('categories', 'pFeatured', 'pRecommended', 'slideHomes', 'slide'));
 	}
+	
 	public function category($id)
 	{
 		$categories  = $this->category->all();
@@ -57,7 +58,6 @@ class StoreController extends Controller
 		$products    = $this->product->ofCategory($id)->get();
 
 		return view('store.category',compact('categories','products','category'));
-
 	}
 	
 	public function product($id)
@@ -96,8 +96,7 @@ class StoreController extends Controller
 		return view('store.sale',compact('sale','categories','product','tags','products','features'));
 	}
 	*/
-	
-	
+		
 	public function about()
 	{
 		$categories = $this->category->all();

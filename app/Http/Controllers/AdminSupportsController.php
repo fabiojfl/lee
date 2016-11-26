@@ -51,6 +51,4 @@ class AdminSupportsController extends Controller
 
         return view('admin.supports.show',compact('categories','support'));
     }
-
-
 }

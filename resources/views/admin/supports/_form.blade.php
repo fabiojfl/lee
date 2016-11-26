@@ -1,4 +1,3 @@
-
 <div>
     <span>{!! Form::label('title','Titulo:') !!}</span>
     {!! Form::text('title', null, ['class'=>'form-control']) !!}

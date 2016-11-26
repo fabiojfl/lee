@@ -1,6 +1,5 @@
 @extends('store.store')
 @section('content')
-
 <div class="single">
 <div class="container">
 	<div class="col-md-9">

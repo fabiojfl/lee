@@ -1,7 +1,7 @@
 	<div>
 		<div>
 			<span>{!! Form::label('category_id','Categoria:') !!}</span>
-			{!! Form::select('', $listCategories, ['class'=>'form-control']) !!}
+			{!! Form::select('category_id', $listCategories, ['class'=>'form-control']) !!}
 		</div>
     </div>
 	<div>
@@ -44,6 +44,7 @@
 		<div>
             <span>{!! Form::label('sale','Promoção:') !!}</span>
     	{!! Form::text('sale', null, ['class'=>'form-control', 'id'=>'']) !!}
+
          </div>
 	</div>
     <div>
@@ -52,6 +53,7 @@
         {!! Form::text('prodqtd', null, ['class'=>'form-control', 'id'=>'']) !!}
          </div>
 	</div>
+
 
     <div>
 		<div>

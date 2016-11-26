@@ -14,7 +14,6 @@
         @endcan
     </div>
     @endcan
-
 @section('categories')
     @include('store.partial.categories')
 @stop
