@@ -21,7 +21,11 @@
                     </td>
                     <td>{{$homeSlide->extension}}</td>
                     <td>
-                        
+                    <td>
+                        <a href="{{route('admin.slides.images.destroy', ['id'=>$homeSlide->id])}}">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </a>
+                    </td>
                     </td>
                 </tr>
             @endforeach

@@ -109,11 +109,12 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::get('create/{id}/feature'    ,['as'=>'admin.products.create_feature',     	'uses'=>'AdminProductsController@createFeature']);
 		Route::post('store/{id}/feature'    ,['as'=>'admin.products.features.store',    	'uses'=>'AdminProductsController@storeFeature']);
 		Route::get('destroy/{id}/feature'   ,['as'=>'admin.products.features.destroy', 		'uses'=>'AdminProductsController@destroyFeature']);
-		
+
 		// Products Slides
 		Route::get('images/{id}/homeSlide'     ,['as'=>'admin.slides.index',         			 'uses'=>'AdminProductsController@homeSlides']);
 		Route::get('create/{id}/homeSlide'     ,['as'=>'admin.slides.create_slide_home_image',   'uses'=>'AdminProductsController@createSlideImage']);
 		Route::post('store/{id}/homeSlide'     ,['as'=>'admin.holmeSlide.images.store',   		 'uses'=>'AdminProductsController@storeHomeSlideImage']);
+		Route::get('destroy/{id}/homeSlide'   ,['as'=>'admin.slides.images.destroy', 		     'uses'=>'AdminProductsController@destroyHomeSlide']);
 	});
 	
 	Route::group(['prefix' => 'orders'], function(){

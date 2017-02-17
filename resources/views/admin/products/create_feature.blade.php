@@ -1,7 +1,8 @@
 ﻿@extends('store.store')
 @section('content')
-    <div class="container">
-    <h1>Criar cartacterísticas para o produto</h1>
+    @can('admin')
+    <div class="col-md-9 contact-top">
+        <h1>Criar cartacterísticas para o produto</h1>
         @if($errors->any())
             @foreach($errors->all() as $error)
                 <div class="alert alert-danger">
@@ -10,13 +11,27 @@
             @endforeach
         @endif
         {!! Form::open(['route'=>['admin.products.features.store', $product->id],'method'=>'post']) !!}
-        <div class="form-group">
-            {!! Form::label('name','Caracteristica para o produto:') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+        <div>
+            <div>
+                <span>{!! Form::label('title','Título da Característica:') !!}</span>
+                {!! Form::text('title', null, ['class'=>'form-control']) !!}
+            </div>
         </div>
-        <div class="form-group">
-            {!! Form::submit('Eviar',['class'=>'btn btn-primary']) !!}
+        <div>
+            <div>
+                <span>{!! Form::label('addinformation','Informção Adicional:') !!}</span>
+                {!! Form::textarea('description', null, ['class'=>'form-control']) !!}
+            </div>
         </div>
+        <label class="hvr-skew-backward">
+            {!! Form::submit('Enviar') !!}
+        </label>
         {!! Form::close() !!}
+        <div class="clearfix"> </div>
     </div>
+    {!! Form::close() !!}
+    @endcan
+@section('categories')
+    @include('store.partial.categories')
+@stop
 @endsection

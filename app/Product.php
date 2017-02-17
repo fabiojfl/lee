@@ -4,18 +4,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model {
 
+
     protected $fillable = [
+        'category_id',
         'name',
-		'quickoverview',
-        'description',
-		'addinformation',
-		'mainsentence',
+        'quickoverview',
+        'mainsentence',
         'price',
         'sale',
         'prodqtd',
+        'description',
         'featured',
-        'recommend',
-        'category_id'
+        'recommend'
     ];
 
     public function category()

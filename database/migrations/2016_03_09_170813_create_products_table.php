@@ -14,17 +14,19 @@ class CreateProductsTable extends Migration {
 	{
 		Schema::create('products', function(Blueprint $table)
 		{
-			$table->increments('id');		
+			$table->increments('id');
 			$table->string('name', 80);
+			//Visão geral rápida
 			$table->string('quickoverview', 170);
+			//Pequena Sentença
 			$table->string('mainsentence', 70);
-			$table->text('description');
-			$table->text('addinformation');
 			$table->decimal('price');
 			$table->decimal('sale');
 			$table->integer('prodqtd');
 			$table->boolean('featured')->nullable();
 			$table->boolean('recommend')->nullable();
+			////Descrição
+			$table->text('description');
 			$table->timestamps();
 		});
 	}

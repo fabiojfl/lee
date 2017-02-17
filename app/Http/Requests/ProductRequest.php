@@ -24,7 +24,6 @@ class ProductRequest extends Request {
 	{
 		return [
 			'name'=>'required',
-			'description' => 'required',
 			'price' => 'required'
 		];
 	}

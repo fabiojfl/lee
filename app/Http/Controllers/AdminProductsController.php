@@ -28,7 +28,13 @@ class AdminProductsController extends Controller
 	private $feature;
 	private $homeSlide;
 
-    public function __construct(Category $category, Product $product, Tag $tag, Features $feature, ProductSlideHome $homeSlide)
+    public function __construct(
+        Category $category,
+        Product $product,
+        Tag $tag,
+        Features $feature,
+        ProductSlideHome $homeSlide
+        )
     {
     	$this->category  = $category;
         $this->product   = $product;
@@ -155,18 +161,23 @@ class AdminProductsController extends Controller
     public function createFeature($id)
     {
         $product = $this->product->find($id);
-        return view('admin.products.create_feature', compact('product'));
+        $categories = $this->category->all();
+        return view('admin.products.create_feature', compact('product', 'categories'));
     }
 
     public function storeFeature(ProductFeatureRequest $request, $id)
     {
-        $feature      =  $this->feature->create(['product_id'=>$id, 'name'=> $request->name]);
+        $feature      =  $this->feature->create([
+            'product_id'	=>$id,
+            'title'			=> $request->title,
+            'description'	=> $request->description
+        ]);
         return redirect()->route('admin.products.features',['id' => $id]);
     }
 
     public function destroyFeature($id)
     {
-        $this->feature->find($id)->delete();
+        $feature = $this->feature->find($id)->delete();
         return redirect()->route('admin.products.features',['id' => $feature->id]);
     }
 	
@@ -189,41 +200,23 @@ class AdminProductsController extends Controller
     {
         $file       = $request->file('image');
         $extension  = $file->getClientOriginalExtension();
-		
+
         $image      = $productSlideHome->create(['product_id' => $id, 'extension'=>$extension]);
 
         Storage::disk('public_local')->put('ProductHomeSlide/'.$image->id.'.'.$extension, File::get($file));
-		
-		Session::flash('flash_message','Slide Do produto inserido com sucesso!.');
+
+        Session::flash('flash_message','Slide Do produto inserido com sucesso!.');
         return redirect()->route('admin.slides.index',['id' => $id]);
     }
-	
-	/*
-	
-	// products image
-	
 
-		
-		Route::get('destroy/{id}/image'   ,['as'=>'admin.sales.images.destroy', 'uses'=>'AdminProductsController@destroyImage']);
-		
-	
-	
-	
-	public function destroyImage(SaleImage $saleImage, $id)
+    public function destroyHomeSlide($id)
     {
-        $image = $saleImage->find($id);
+        $productHomeSlide = $this->homeSlide->find($id)->delete();
+        return redirect()->route('admin.slides.index',['id' => $id]);
 
-        if(file_exists(public_path().'/uploads/promocao/'.$image->id.'.'.$image->extension))
-        {
-            Storage::disk('public_local')->delete($image->id.'.'.$image->extension);
-        }
+    }
 
-        $sale = $image->sale;
-        $image->delete();
 
-        return redirect()->route('admin.sales.images',['id' => $sale->id]);
-    }	
-	*/
     //search id tags
 
     public function getTagIds($tags)

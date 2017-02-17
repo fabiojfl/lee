@@ -14,10 +14,12 @@ class CreateFeaturesTable extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->increments('id');
-			$table->integer('product_id')->unsigned();
-			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-			$table->string('name');
-			$table->timestamps();
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            //Titulo da Caracteristica
+            $table->string('title');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
