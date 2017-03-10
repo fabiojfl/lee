@@ -1,4 +1,4 @@
-﻿<div class="col-md-3 product-bottom product-at">
+﻿
 	@can('admin')
 	<!--categories-->
 	<div class=" rsidebar span_1_of_left">
@@ -88,4 +88,4 @@
 </div>
 
 </div>
-</div>
+
