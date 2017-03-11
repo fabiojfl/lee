@@ -87,7 +87,7 @@
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1">
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
-							<li ><a class="color6" href="{{url('/about')}}">Promoções</a></li>
+							<li ><a class="color6" href="{{url('/about')}}">PromoÃ§Ãµes</a></li>
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
@@ -142,12 +142,12 @@
 				<div class="container">
 					<div class="col-md-12 footer-middle-in text-center">
 						<a href="{{url('/about')}}"><img src="{{ asset('images/log.png') }}" alt="">
-							<p>A Leelee Cosméticos defende ....</p>
+							<p>A Leelee CosmÃ©ticos defende ....</p>
 						</a>
 					</div>
 					<!--
 					<div class="col-md-3 footer-middle-in">
-						<h6>Maiores informações</h6>
+						<h6>Maiores informaÃ§Ãµes</h6>
 						<ul class=" in">
 							<li><a href="#">A Leelee</a></li>
 							<li><a href="#">Atendimento</a></li>
@@ -168,7 +168,7 @@
 					</div>
 					<div class="col-md-3 footer-middle-in">
 						<h6>Novidades</h6>
-						<span>Envie seu email para receber promoções e novidades.</span>
+						<span>Envie seu email para receber promoÃ§Ãµes e novidades.</span>
 							<form>
 								<input type="text" value="Seu email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
 								<input type="submit" value="Enviar">
@@ -187,7 +187,7 @@
 						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
 						-->
 					</ul>
-					<p class="footer-class">&copy;2016 Lee lee Cosméticos.</p>
+					<p class="footer-class">&copy;2016 Lee lee CosmÃ©ticos.</p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>

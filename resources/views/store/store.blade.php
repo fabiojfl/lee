@@ -87,6 +87,10 @@
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav nav_1">
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
+							<!-- <li ><a class="color6" href="{{url('/about')}}">Promoções</a></li> -->
+							<li><a class="color4" href="{{url('/category/1')}}">Matizadores</a></li>
+							<li><a class="color4" href="{{url('/')}}">Promoções</a></li>
+							<li><a class="color4" href="{{url('/')}}">Newslatter</a></li>
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
@@ -96,19 +100,17 @@
 	</div>
 	<!-- end menu -->
 	<!--content slide-->
-	
-
 </div>
 
 
 
 	<div class="banner-top">
 		<div class="container">
-		<!--
-			<h1>Products</h1>
+
+			<h1>Produtos</h1>
 			<em></em>
 			<h2><a href="index.html">Home</a><label>/</label>Products</a></h2>
-			-->
+			
 		</div>
 	</div>
 	
@@ -121,32 +123,11 @@
 			
 				@yield('content')
 				@yield('categories')
+				
 				</div>
 				</div class="clearfix"></div>
 			</div>
-		<!--products-->
-		<!--brand-->
-		<!--
-		<div class="brand">
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic1.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic2.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic3.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="clearfix"></div>
-			</div>
-		<!--//brand
-		
-		</div>
-		-->
-	</div>
+
 <!--//content-->
 <!--//footer-->
 	<div class="footer">

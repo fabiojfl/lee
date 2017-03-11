@@ -1,5 +1,7 @@
+						<div class="col-md-12"><!-- Novidades  -->
+						
 @foreach($products as $product)
-<div class="col-md-4 item-grid1 simpleCart_shelfItem">
+				<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 						<div class="pro-img">
 						@if(count($product->images))
@@ -39,6 +41,16 @@
 							
 						</div>
 					</div>
-					</div>
+				</div>
 @endforeach
 <div class="clearfix"></div>
+			<div class="brand"> <!-- brand -->
+								<div class="col-md-6 brand-grid">
+									<img src="{{url('images/banner-dearest-nature-300x100.gif')}}" class="img-responsive" alt="">
+								</div>
+								<div class="col-md-6 brand-grid">
+									<img src="{{url('images/st_300x100.png')}}" class="img-responsive" alt="">
+								</div>
+								<div class="clearfix"></div>
+							</div> <!-- end brand -->
+						</div><!--  Fim Novidades -->

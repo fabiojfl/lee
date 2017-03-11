@@ -40,6 +40,8 @@
 		});
 		</script>
 <!---//End-rate---->
+<!--slider-script-->
+
 </head>
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" media="all" >
 
@@ -90,6 +92,9 @@
 						<ul class="nav navbar-nav nav_1">
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
 							<!-- <li ><a class="color6" href="{{url('/about')}}">Promoções</a></li> -->
+							<li><a class="color4" href="{{url('/category/1')}}">Matizadores</a></li>
+							<li><a class="color4" href="{{url('/')}}">Promoções</a></li>
+							<li><a class="color4" href="{{url('/')}}">Newslatter</a></li>
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
@@ -98,76 +103,37 @@
 		</div>
 	</div>
 	<!-- end menu -->
-	<!--content slide-->
-	<div class="content">
-		<div class="container">		
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
-				
-				
-				
-				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="" class="active"></li>
-					
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
-					<li data-target="#myCarousel" data-slide-to="3"></li>
-					
-				</ol>
-				<ul class="bxslider">
-					@foreach($slideHomes as $slideHome)
-					<li>
-						<a href="{{route('store.product', ['id' => $slideHome->id])}}">
-							<img src="{{ url('uploads/ProductHomeSlide/'.$slideHome->id.'.'.$slideHome->extension) }}" alt="">
-						</a>
-					</li>
-					@endforeach
-				</ul>
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-					
-					</div>
-					<!--
-				</div>
-				<!-- End Wrapper for slides -->
-			</div>
-		</div>
-	</div>
-</div>
+	
 	<!--content-->
 	<div class="content">
 		<div class="container">
-		<!--products-->
-			<div class="product">
-				<div class="container">
-				@yield('content')
-				@yield('categories')
-				</div>
-				</div class="clearfix"></div>
-			</div>
-		<!--products-->
-		<!--brand-->
-		<!--
-		<div class="brand">
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic1.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic2.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="col-md-3 brand-grid">
-				<img src="{{ asset('images/ic3.png') }}" class="img-responsive" alt="">
-			</div>
-			<div class="clearfix"></div>
-			</div>
-		<!--//brand
 		
-		</div>
-		-->
-	</div>
+			<div class="banner">
+					<!-- Slideshow 4 -->
+				   <div class="slider">
+						<ul class="rslides" id="slider1">
+						@foreach($slideHomes as $slideHome)
+						<li>
+							<a href="{{route('store.product', ['id' => $slideHome->id])}}">
+								<img src="{{ url('uploads/ProductHomeSlide/'.$slideHome->id.'.'.$slideHome->extension) }}" alt="">
+							</a>
+						</li>
+						@endforeach
+						</ul>
+					</div>
+					<div class="banner-bottom">	
+					 <div class="clearfix"></div>
+					 <br>
+					</div> 
+				</div><!-- end banner -->		
+				@yield('content')
+				
+				@yield('categories')
+				
+				
+		</div><!-- fim novidades -->
+	</div><!-- end container -->
+	</div><!-- end content -->				
 <!--//content-->
 <!--//footer-->
 	<div class="footer">
@@ -313,6 +279,18 @@ $(document).ready(function(){
   });
 });
 </script>
-
+<script src="{{ asset('js/responsiveslides.min.js') }}" type="text/javascript"></script>
+		
+			<script>
+				$(function () {
+				  $("#slider1").responsiveSlides({
+					auto: true,
+					speed: 500,
+					namespace: "callbacks",
+					pager: true,
+				  });
+				});
+			</script>
+<!--//slider-script-->
 </body>
 </html>

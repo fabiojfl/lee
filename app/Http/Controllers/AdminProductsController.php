@@ -209,11 +209,20 @@ class AdminProductsController extends Controller
         return redirect()->route('admin.slides.index',['id' => $id]);
     }
 
-    public function destroyHomeSlide($id)
-    {
-        $productHomeSlide = $this->homeSlide->find($id)->delete();
-        return redirect()->route('admin.slides.index',['id' => $id]);
 
+    public function destroyHomeSlide(ProductSlideHome $productSlideHome, $id)
+    {
+        $image = $productSlideHome->find($id);
+
+        if(file_exists(public_path().'/uploads/ProductHomeSlide/'.$image->id.'.'.$image->extension))
+        {
+            Storage::disk('public_local')->delete($image->id.'.'.$image->extension);
+        }
+
+        $product = $image->product;
+        $image->delete();
+
+        return redirect()->route('admin.products.images',['id' => $product->id]);
     }
 
 
