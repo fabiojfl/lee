@@ -1,148 +1,127 @@
-@extends('store.store')
+@extends('store.pstore')
 @section('content')
-	<div class="single">
-		<div class="container">
-			<div class="col-md-9">
-				<div class="col-md-5 grid">
-					<div class="flexslider">
-						<ul class="slides">
-							@if(count($product->images))
-								@foreach($product->images as $images)
-									<li data-thumb="{{ url('uploads/'.$images->id.'.'.$images->extension) }}">
-										<div class="thumb-image"> <img src="{{ url('uploads/'.$images->id.'.'.$images->extension) }}" data-imagezoom="true" class="img-responsive"> </div>
-									</li>
-								@endforeach
-							@else
-								<li data-thumb="{{ url('images/sem-imagem.jpg') }}">
-									<div class="thumb-image">  <img src="{{url('images/sem-imagem.jpg')}}" data-imagezoom="true" class="img-responsive"> </div>
-								</li>
-							@endif
-						</ul>
-					</div>
-				</div><!-- end col-md-5 grid-->
-				<div class="col-md-7 single-top-in">
-					<div class="span_2_of_a1 simpleCart_shelfItem">
-						<h3>{{$product->name}}</h3>
-						<p class="in-para">{{$product->mainsentence}}.</p>
-						<div class="mid-2">
-							<p>
-								<label>R$ {{number_format($product->price,2 , "," , ".")}}</label>
-							</p>
-							<div class="clearfix"></div>
-						</div>
-						<div class="price_single">
-							<span class="reducedfrom item_price">R$ {{number_format($product->sale,2 , "," , ".")}}</span>
-							<div class="clearfix"></div>
-						</div>
-						<h4 class="quick">Pequena DescriÃ§Ã£o:</h4>
-						<p class="quick_desc"> {{$product->quickoverview}} ...</p>
-						<!--
-                        <div class="wish-list">
-                            <ul>
-                                <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-                                <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
-                            </ul>
-                        </div>
-                        <div class="quantity">
-                            <div class="quantity-select">
-                            <div class="entry value-minus">&nbsp;</div>
-                            <div class="entry value"><span>1</span></div>
-                            <div class="entry value-plus active">&nbsp;</div>
-                            </div>
-                        </div>
-                        -->
-						<!--quantity-->
-						<script>
-							$('.value-plus').on('click', function(){
-								var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
-								divUpd.text(newVal);
-							});
-							$('.value-minus').on('click', function(){
-								var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
-								if(newVal>=1) divUpd.text(newVal);
-							});
-						</script>
-						<!--quantity-->
-						<a href="{{route('store.cart.add',['id' => $product->id])}}" class="add-to item_add hvr-skew-backward">Adicionar no carrinho</a>
-						<div class="clearfix"> </div>
-					</div>
-				</div><!-- col-md-7 single-top-in -->
-				<div class="clearfix"> </div>
-				<!---->
-
-				@foreach($features as $feature)
-
-					<B>{{$feature->title}}</B>
-					<BR/>
-					{{$product->description}}
-					<BR/>
-				@endforeach
-
-			</div><!-- end tab-head-->
-
-			<div class="col-md-12 content-mid">
-				<h3>Produtos Relacionados</h3>
-				<label class="line"></label>
-			</div>
-			<br/>
-			<div class="col-md-12 content-mid">
-				<div class="mid-popular">
-
-
-
-					@foreach($relatedsProducts as $related)
-						<div class="col-md-4 item-grid1 simpleCart_shelfItem">
-							<div class=" mid-pop">
-								<div class="pro-img">
-									@if(count($related->images))
-										<img src="{{url('uploads/'.$related->images->first()->id.'.'.$related->images->first()->extension)}}" alt="" class="img-responsive"/>
-									@else
-										<img src="{{url('images/sem-imagem.jpg')}}" alt="" class="img-responsive"/>
-									@endif
-									<div class="zoom-icon ">
-										@if(count($related->images))
-											<a class="picture" href="{{url('uploads/'.$related->images->first()->id.'.'.$related->images->first()->extension)}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon"></i></a>
-										@else
-											<a class="picture" href="{{url('images/sem-imagem.jpg')}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon"></i></a>
-										@endif
-										<a href="{{route('store.product', ['id' => $related->id])}}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-									</div>
-								</div>
-								<div class="mid-1">
-									<div class="women">
-										<div class="women-top">
-											<span>{{$related->category->name}}</span>
-											<h6><a href="{{route('store.product', ['id' => $related->id])}}">{{$related->name}}</a></h6>
-										</div>
-										<div class="img item_add">
-											<a href="{{route('store.cart.add',['id' => $related->id])}}"><img src="{{ asset('images/ca.png') }}" alt=""></a>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="mid-2">
-										<p><label>R$ {{number_format($related->price,2 , "," , ".")}}</label><em class="item_price">R$ {{number_format($related->sale,2 , "," , ".")}}</em></p>
-										<div class="block">
-											<div class="starbox small ghosting"> </div>
-										</div>
-										<div class="clearfix"></div>
-									</div>
+<div class="col-md-9">
+	<div class="col-md-5 grid">		
+		<div class="flexslider">
+			  <ul class="slides">
+			    <li data-thumb="{{ url('images/si.jpg') }}">
+			     
+			        <div class="thumb-image"> <img src="{{ url('images/si.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="{{ url('images/si1.jpg') }}">
+			         <div class="thumb-image"> <img src="{{ url('images/si1.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="{{ url('images/si2.jpg') }}">
+			       <div class="thumb-image"> <img src="{{ url('images/si2.jpg') }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li> 
+			  </ul>
+		</div>
+	</div>	
+<div class="col-md-7 single-top-in">
+						<div class="span_2_of_a1 simpleCart_shelfItem">
+				<h3>Nam liber tempor cum</h3>
+				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+			    <div class="price_single">
+				  <span class="reducedfrom item_price">$140.00</span>
+				 <a href="#">click for offer</a>
+				 <div class="clearfix"></div>
+				</div>
+				<h4 class="quick">Quick Overview:</h4>
+				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+			    <div class="wish-list">
+				 	<ul>
+				 		<li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
+				 	    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
+				 	</ul>
+				 </div>
+				 <div class="quantity"> 
+								<div class="quantity-select">                           
+									<div class="entry value-minus">&nbsp;</div>
+									<div class="entry value"><span>1</span></div>
+									<div class="entry value-plus active">&nbsp;</div>
 								</div>
 							</div>
-						</div>
-					@endforeach
-				</div>
+							<!--quantity-->
+	<script>
+    $('.value-plus').on('click', function(){
+    	var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+    	divUpd.text(newVal);
+    });
+
+    $('.value-minus').on('click', function(){
+    	var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+    	if(newVal>=1) divUpd.text(newVal);
+    });
+	</script>
+	<!--quantity-->
+				 
+			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+			<div class="clearfix"> </div>
 			</div>
+		
+					</div>
+			<div class="clearfix"> </div>
+			<!---->
+			<div class="tab-head">
+			 <nav class="nav-sidebar">
+		<ul class="nav tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">Product Description</a></li>
+          <li class=""><a href="#tab2" data-toggle="tab">Additional Information</a></li> 
+          <li class=""><a href="#tab3" data-toggle="tab">Reviews</a></li>  
+		</ul>
+	</nav>
+	<div class="tab-content one">
+<div class="tab-pane active text-style" id="tab1">
+ <div class="facts">
+									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
+										<ul>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
+										</ul>         
+							        </div>
 
-			<br>
+</div>
+<div class="tab-pane text-style" id="tab2">
+	
+									<div class="facts">									
+										<p > Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
+										<ul >
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Multimedia Systems</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Digital media adapters</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Set top boxes for HDTV and IPTV Player  </li>
+										</ul>
+							        </div>	
 
-		</div>
-		<!-- fim Produto relacionado -->
-		<!-- <div class="col-md-3 product-bottom product-at"> -->
-		@section('categories')
+</div>
+<div class="tab-pane text-style" id="tab3">
+
+									 <div class="facts">
+									  <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
+										<ul>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
+											<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
+										</ul>     
+							     </div>	
+
+ </div>
+  
+  </div>
+  <div class="clearfix"></div>
+  </div>
+			<!---->	
+</div>
+
+<div class="col-md-3 product-bottom product-at">
+	@section('categories')
 		@include('store.partial.categories')
-		@stop
-		@stop
-				<!--</div> <!-- col-md-3 product-bottom product-at-->
-		<div class="clearfix"> </div>
-	</div> <!-- end container -->
-	</div> <!-- end single -->
+	@stop
+</div>
+@endsection
