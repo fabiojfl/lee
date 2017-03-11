@@ -1,8 +1,9 @@
 @extends('store.store')
 @section('content')
     <div class="col-sm-9 padding-right">
-        <div class="features_items"><!--features_items-->
-            <h2 class="title text-center">{{$category->name}}</h2>
+        <div class="content-mid features_items "><!--features_items-->
+            <h3 class="text-center">{{$category->name}}</h3>
+            <label class="line"></label><br><br>
             @include('store.partial.product', ['products'=>$products])
         </div><!--features_items-->
     </div>

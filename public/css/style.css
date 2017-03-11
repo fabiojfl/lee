@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5,h6,label,p{
     color: #F67777;
 }
 .header-top {
-    background-color: #2E2E2E;
+    background-color: #baa7b1;
 	padding: 0.3em 0;
 }
 .header-social ul li a i{
@@ -228,6 +228,11 @@ a.item_add {
 .search-right {
     padding: 0.6em 0 0;
 }
+
+.space-title{
+	
+	margin: 0 0 0 10px;
+}
 /*--//header--*/
 /*--banner--*/
 
@@ -306,9 +311,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 	background-size: cover;
 }
 .banner-bottom{
-	background:#92d3d0;
+	background:#eed5d8;
 	padding:1.5em 1em;
-	border-bottom:7px solid #8dcac8;
+	border-bottom:7px solid #baa7b1;
 }
 .banner-matter{
 	float:right;	
@@ -1631,7 +1636,7 @@ ul.tag-in li a:hover{
     background: #fff;
 }
 .footer-bottom{
-	background:#000;
+	background:#baa7b1;
 	padding:1em 0;	 
 }
 .footer-class{

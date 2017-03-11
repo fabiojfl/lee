@@ -92,6 +92,9 @@
 						<ul class="nav navbar-nav nav_1">
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
 							<!-- <li ><a class="color6" href="{{url('/about')}}">Promoções</a></li> -->
+							<li><a class="color4" href="{{url('/category/1')}}">Matizadores</a></li>
+							<li><a class="color4" href="{{url('/')}}">Promoções</a></li>
+							<li><a class="color4" href="{{url('/')}}">Newslatter</a></li>
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
@@ -104,6 +107,7 @@
 	<!--content-->
 	<div class="content">
 		<div class="container">
+		
 			<div class="banner">
 					<!-- Slideshow 4 -->
 				   <div class="slider">
@@ -121,20 +125,15 @@
 					 <div class="clearfix"></div>
 					 <br>
 					</div> 
-				</div>			
-			<!--products-->
-			<div class="content-mid">
-				<div class="container">
-					<div class="col-md-9">
-						@yield('content')
-					</div>
-					<div class="col-md-3 product-bottom">	
-						@yield('categories')
-					</div>	
-				</div>
-			</div>
-		</div>
-	</div><!-- end content -->
+				</div><!-- end banner -->		
+				@yield('content')
+				
+				@yield('categories')
+				
+				
+		</div><!-- fim novidades -->
+	</div><!-- end container -->
+	</div><!-- end content -->				
 <!--//content-->
 <!--//footer-->
 	<div class="footer">

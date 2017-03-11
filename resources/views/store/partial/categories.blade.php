@@ -1,9 +1,13 @@
 ﻿
-	@can('admin')
-	<!--categories-->
-	<div class=" rsidebar span_1_of_left">
-		<h4 class="cate">Administrador</h4>
-		<ul class="menu-drop">
+
+
+
+<div class="col-md-3 product-bottom">
+						<!--categories-->
+						@can('admin')
+							<div class=" rsidebar span_1_of_left">
+									<h4 class="cate">Administrador</h4>
+										 <ul class="menu-drop">
 			<li class="item1"><a href="">Painel</a>
 				<ul class="cute">
 					<li class="subitem1"><a href="{{ url('/home') }}">Painel</a></li>
@@ -43,9 +47,10 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
-	@endcan
-	<!--categories-->
+								</div>
+									@endcan
+									
+		<!--categories-->
 	<div class=" rsidebar span_1_of_left">
 		<h4 class="cate">Categorias</h4>
 		<ul class="menu-drop">
@@ -60,32 +65,34 @@
 
 		</ul>
 	</div>
-
-	<!--initiate accordion-->
-	<script type="text/javascript">
-	//$(function() {
-	//		var menu_ul = $('.menu-drop > li > ul'),
-	//				menu_a  = $('.menu-drop > li > a');
-	//		menu_ul.hide();
-	//		menu_a.click(function(e) {
-	//			e.preventDefault();
-	//			if(!$(this).hasClass('active')) {
-	//				menu_a.removeClass('active');
-	//				menu_ul.filter(':visible').slideUp('normal');
-	//				$(this).addClass('active').next().stop(true,true).slideDown('normal');
-	//			} else {
-	//				$(this).removeClass('active');
-	//				$(this).next().stop(true,true).slideUp('normal');
-	//			}
-	//		});
-
-	//	});
-	</script>
-	<!--//menu-->
-</div>
-<div class="clearfix"> </div>
-</div>
-</div>
-
-</div>
-
+									
+							<!--initiate accordion-->
+									<script type="text/javascript">
+										$(function() {
+										    var menu_ul = $('.span_1_of_left > li > ul'),
+										           menu_a  = $('.menu-drop > li > a');
+										    menu_ul.hide();
+										    menu_a.click(function(e) {
+										        e.preventDefault();
+										        if(!$(this).hasClass('active')) {
+										            menu_a.removeClass('active');
+										            menu_ul.filter(':visible').slideUp('normal');
+										            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+										        } else {
+										            $(this).removeClass('active');
+										            $(this).next().stop(true,true).slideUp('normal');
+										        }
+										    });
+										
+										});
+									</script>
+			        	<!--//menu-->
+		 				<section  class="sky-form ">
+		 					<img src="{{url('images/BOLT_RESIZE_300x600_v6.jpg')}}" class="img-responsive" alt="">
+						 </section> 	
+						 			 				 
+						</div><!-- dysplay -->	
+						<br>
+						<div class="clearfix"></div>
+	
+	

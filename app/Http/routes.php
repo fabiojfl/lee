@@ -104,17 +104,19 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::post('store/{id}/images'   ,['as'=>'admin.products.images.store',   'uses'=>'AdminProductsController@storeImage']);
 		Route::get('destroy/{id}/image'   ,['as'=>'admin.products.images.destroy', 'uses'=>'AdminProductsController@destroyImage']);
 		
+		// Products Slides
+		Route::get('images/{id}/homeSlide'     ,['as'=>'admin.slides.index',         			 'uses'=>'AdminProductsController@homeSlides']);
+		Route::get('create/{id}/homeSlide'     ,['as'=>'admin.slides.create_slide_home_image',   'uses'=>'AdminProductsController@createSlideImage']);
+		Route::post('store/{id}/homeSlide'     ,['as'=>'admin.holmeSlide.images.store',   		 'uses'=>'AdminProductsController@storeHomeSlideImage']);
+		Route::get('destroy/{id}/homeSlide'    ,['as'=>'admin.slides.images.destroy', 		     'uses'=>'AdminProductsController@destroyHomeSlide']);
+		
 		// products features
 		Route::get('feature/{id}/product'   ,['as'=>'admin.products.features',          	'uses'=>'AdminProductsController@features']);
 		Route::get('create/{id}/feature'    ,['as'=>'admin.products.create_feature',     	'uses'=>'AdminProductsController@createFeature']);
 		Route::post('store/{id}/feature'    ,['as'=>'admin.products.features.store',    	'uses'=>'AdminProductsController@storeFeature']);
 		Route::get('destroy/{id}/feature'   ,['as'=>'admin.products.features.destroy', 		'uses'=>'AdminProductsController@destroyFeature']);
 
-		// Products Slides
-		Route::get('images/{id}/homeSlide'     ,['as'=>'admin.slides.index',         			 'uses'=>'AdminProductsController@homeSlides']);
-		Route::get('create/{id}/homeSlide'     ,['as'=>'admin.slides.create_slide_home_image',   'uses'=>'AdminProductsController@createSlideImage']);
-		Route::post('store/{id}/homeSlide'     ,['as'=>'admin.holmeSlide.images.store',   		 'uses'=>'AdminProductsController@storeHomeSlideImage']);
-		Route::get('destroy/{id}/homeSlide'   ,['as'=>'admin.slides.images.destroy', 		     'uses'=>'AdminProductsController@destroyHomeSlide']);
+		
 	});
 	
 	Route::group(['prefix' => 'orders'], function(){
