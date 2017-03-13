@@ -9,6 +9,8 @@ use CodeCommerce\Http\Requests\SlideHomeRequest;
 use CodeCommerce\Http\Requests\ProductImageRequest;
 use CodeCommerce\Http\Requests\ProductFeatureRequest;
 use CodeCommerce\Http\Requests\ProductRequest;
+use CodeCommerce\Http\Requests\ProductItemFeatureRequest;
+
 
 use CodeCommerce\Product;
 use CodeCommerce\ProductImage;
@@ -18,22 +20,26 @@ use Illuminate\Support\Facades\File;
 use CodeCommerce\Category;
 use CodeCommerce\Features;
 use CodeCommerce\ProductSlideHome;
+use CodeCommerce\ItemFeature;
 use Session;
 
 class AdminProductsController extends Controller
 {
-     private $category;
+    private $category;
 	private $product;
     private $tag;
 	private $feature;
 	private $homeSlide;
+    private $itemFeature;
 
     public function __construct(
         Category $category,
         Product $product,
         Tag $tag,
         Features $feature,
-        ProductSlideHome $homeSlide
+        ProductSlideHome $homeSlide,
+        ItemFeature $itemFeature
+
         )
     {
     	$this->category  = $category;
@@ -41,6 +47,7 @@ class AdminProductsController extends Controller
         $this->tag       = $tag;
 		$this->feature   = $feature;
 		$this->homeSlide = $homeSlide;
+        $this->itemFeature = $itemFeature;
 		
         $this->middleware('auth');
     }
@@ -154,8 +161,11 @@ class AdminProductsController extends Controller
 	
 	public function features($id)
     {
+        $feature = $this->feature->find($id);
         $product = $this->product->find($id);
-        return view('admin.products.features', compact('product','features'));
+        $features = $this->feature->all();
+
+        return view('admin.products.features', compact('product','features', 'feature'));
     }
 
     public function createFeature($id)
@@ -164,6 +174,7 @@ class AdminProductsController extends Controller
         $categories = $this->category->all();
         return view('admin.products.create_feature', compact('product', 'categories'));
     }
+
 
     public function storeFeature(ProductFeatureRequest $request, $id)
     {
@@ -180,7 +191,47 @@ class AdminProductsController extends Controller
         $feature = $this->feature->find($id)->delete();
         return redirect()->route('admin.products.features',['id' => $feature->id]);
     }
-	
+
+    public function itemFeatures($id)
+    {
+        $feature = $this->itemFeature->find($id);
+        $features = $this->itemFeature->all();
+
+        //itemFeatures
+        return view('admin.products.ifeatures', compact('feature','features'));
+
+    }
+
+    public function createItemFeature($id)
+    {
+
+        $feature = $this->feature ->find($id);
+        $categories = $this->category->all();
+
+        return view('admin.products.create_item_feature', compact('feature', 'categories'));
+    }
+
+    public function storeItemFeature(ProductItemFeatureRequest $request, $id)
+    {
+
+            $feature      =  $this->itemFeature->create([
+            'feature_id'	=>$id,
+            'text'			=> $request->text
+
+        ]);
+
+        return redirect()->route('admin.products.ifeatures',['id' => $id]);
+
+    }
+
+    public function destroyItemFeature($id)
+    {
+        $itemfeature = $this->itemFeature->find($id)->delete();
+        return redirect()->route('admin.products.index');
+
+    }
+
+
 	public function homeSlides($id)
     {
 		$categories = $this->category->all();

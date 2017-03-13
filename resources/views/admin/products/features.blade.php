@@ -1,21 +1,24 @@
 ﻿@extends('store.store')
 @section('content')
     <div class="container">
-        <h1>Lista de Características do produto:&nbsp <b></b></h1>
+        <h1>Características especiais de <b>        </b></h1>
         <hr>
         <div class="form-group">
-            <a href="{{route('admin.products.create_feature', ['id'=>$product->id])}}" class="btn btn-primary">Nova Característica</a><!-- /.box-header -->
+            <a href="{{route('admin.products.create_item_feature', ['id'=>$feature->id])}}" class="btn btn-primary">Adicionar item a mais</a><!-- /.box-header -->
         </div>
         <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
             </tr>
-            @foreach($product->features as $feature)
+            @foreach($features as $feature)
                 <tr>
                     <td>{{$feature->id}}</td>
-                    <td>{{$feature->name}}</td>
+                    <td>{{$feature->title}}</td>
                     <td>
+                        <a href="{{route('admin.products.create_item_feature', ['id'=>$feature->id])}}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
                         <a href="{{route('admin.products.features.destroy', ['id'=>$feature->id])}}">
                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </a>

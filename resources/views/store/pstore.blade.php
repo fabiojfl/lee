@@ -101,21 +101,21 @@
 	<!-- end menu -->
 	<!--content slide-->
 </div>	
-<div class="banner-top">
-	<div class="container">
-		<h1>Single</h1>
-		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Single</h2>
-	</div>
-</div>
-<div class="single">
-		<div class="container">
-		@yield('content')
-		@yield('categories')
+		<div class="banner-top">
+			<div class="container">
+				<h1>Single</h1>
+				<em></em>
+				<h2><a href="index.html">Home</a><label>/</label>Single</h2>
+			</div>
 		</div>
-		<div class="clearfix"></div>
-		<div class="container">
-			<div class="brand"> <!-- brand -->
+		<div class="single">
+			<div class="container">
+				@yield('content')
+				@yield('categories')
+			</div>
+			<div class="clearfix"></div>
+			<div class="container">
+				<div class="brand"> <!-- brand -->
 					<div class="col-md-6 brand-grid">
 						<img src="{{url('images/banner-dearest-nature-300x100.gif')}}" class="img-responsive" alt="">
 					</div>
@@ -125,7 +125,7 @@
 					<div class="clearfix"></div>
 				</div> <!-- end brand -->
 			</div>
-		</div>
+		</div><!--single-->
 <!--//content-->
 <!--//footer-->
 	<div class="footer">
@@ -133,7 +133,7 @@
 				<div class="container">
 					<div class="col-md-12 footer-middle-in text-center">
 						<a href="{{url('/about')}}"><img src="{{ asset('images/log.png') }}" alt="">
-							<p>A Leelee CosmÃ©ticos defende ....</p>
+							<p>A Leelee Cosméticos defende ....</p>
 						</a>
 					</div>
 					<!--
@@ -178,7 +178,7 @@
 						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
 						-->
 					</ul>
-					<p class="footer-class">&copy;2016 Lee lee CosmÃ©ticos.</p>
+					<p class="footer-class">&copy;2016 Lee lee Cosméticos.</p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>

@@ -17,4 +17,9 @@ class Features extends Model
         return $this->belongsTo('CodeCommerce\Product');
     }
 
+    public function itemFeatures()
+    {
+        return $this->hasMany('CodeCommerce\itemFeature');
+    }
+
 }

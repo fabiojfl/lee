@@ -116,6 +116,12 @@ Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 		Route::post('store/{id}/feature'    ,['as'=>'admin.products.features.store',    	'uses'=>'AdminProductsController@storeFeature']);
 		Route::get('destroy/{id}/feature'   ,['as'=>'admin.products.features.destroy', 		'uses'=>'AdminProductsController@destroyFeature']);
 
+		// products itemFeatures
+		Route::get('itemFeature/{id}/itemFeature'   ,['as'=>'admin.products.ifeatures',          	'uses'=>'AdminProductsController@itemFeatures']);
+		Route::get('itemCreate/{id}/itemFeature'    ,['as'=>'admin.products.create_item_feature',     	'uses'=>'AdminProductsController@createItemFeature']);
+		Route::post('itemStore/{id}/itemFeature'    ,['as'=>'admin.products.itemFeatures.store',    	'uses'=>'AdminProductsController@storeItemFeature']);
+		Route::get('itemDestroy/{id}/itemFeature'   ,['as'=>'admin.products.itemFeatures.destroy', 		'uses'=>'AdminProductsController@destroyItemFeature']);
+
 		
 	});
 	

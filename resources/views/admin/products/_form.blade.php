@@ -12,13 +12,13 @@
 </div>
 <div>
 	<div>
-		<span>{!! Form::label('mainsentence','Sentença Principal') !!}</span>
+		<span>{!! Form::label('mainsentence','Sentença Principal (Até 55 caracteres)') !!}</span>
 		{!! Form::text('mainsentence', null, ['class'=>'form-control']) !!}
 	</div>
 </div>
 <div>
 	<div>
-		<span>{!! Form::label('quickoverview','Visão Rápida') !!}</span>
+		<span>{!! Form::label('quickoverview','Visão Rápida (Até 170 caracteres)') !!}</span>
 		{!! Form::textarea('quickoverview', null, ['class'=>'form-control']) !!}
 	</div>
 </div>
