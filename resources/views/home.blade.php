@@ -1,122 +1,72 @@
 @extends('store.store')
 @section('content')
 	@can('admin')
-
-
 	<div class="col-md-9 contact-top ">
 		<h3>Super Administrador</h3>
 		<h2>Olá,{{ Auth::user()->name }}.</h2>
 		<hr>
-
 			<div class="clearfix"> </div>
 	</div>
-
-
-@section('categories')
-	@include('store.partial.categories')
-@stop
-
+	@section('categories')
+		@include('store.partial.categories')
+	@stop
+@endcan
+@can('user')
+	<!--content-->
+<div class="container">
+<div class="page-header-admin-client page-header">
+        <h2>Minha Conta</h2>
+    </div>
+	<div class="page-header-admin-client">
+        <h3>Meus Pedidos</h3>
+    </div>
+	<div class="table-responsive">
+	    <table class="table table-bordered table-striped">
+	      <colgroup>
+	        <col class="col-xs-4">
+	        <col class="col-xs-4">
+	        <col class="col-xs-4">
+	      </colgroup>
+	      <tbody>
+	         @foreach($userOrders as $order)
+	        <tr>
+	          <th scope="row">
+	            <code> {{$order->updated_at}}</code>
+	          </th>
+	          <td>{{$order->status}}</td>
+	          <td>
+          		<ul>
+					<li class="wish"><a href="{{ route('admin.orders.show',['id'=> $order->id]) }}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Visualizar pedido</a></li>
+				</ul>
+	          </td>
+	        </tr>
+	        @endforeach
+	      </tbody>
+	    </table>
+  	</div>
+    <div class="page">
+		<div class="grid_3 grid_4">
+			<div class="page-header-admin-client page-header">
+       		<h2>Dados do Usuário</h2>
+      	</div>
+  		<div class="row">
+            <div class="col-sm-8 page-header-admin-client">
+            <h4>Olá,{{ Auth::user()->name }}.</h4>
+                <p>{{ Auth::user()->email }}</p>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
+                <p>
+                    <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
+                </p>
+            </div>
+            <div class="col-sm-4 page-header-admin-client">
+                <h4>Menu de Opções</h4>
+                <p><a href="{{ route('register.show', ['id'=>Auth::user()->id]) }}"><span>Editar Perfil</span></a></p>
+                <p><a href="{{route('admin.newsletters.create')}}"><span>Receber novidades</span></a></p>
+                <p><a href="{{route('admin.supports.create')}}"><span>Atendimento</span></a></p>
+            </div>
+        </div> <!-- //.row -->    
+    </div><!-- //Page -->
+</div><!--//Container-->
 	@endcan
-
-	@can('user')
-	<div class="single">
-
-		<div class="container">
-			<div class="col-md-12 ">
-				<div class="col-md-3 grid">
-					<div class="profile-sidebar">
-						<!-- SIDEBAR USERPIC -->
-						<!--
-                        <div class="profile-userpic">
-                            <img src="images/pi2.jpg" class="img-responsive" alt="">
-                        </div>
-        -->
-						<!-- END SIDEBAR USERPIC -->
-						<!-- SIDEBAR USER TITLE -->
-
-						<div class="profile-usertitle">
-							<div class="profile-usertitle-name">
-								<h2>Olá,{{ Auth::user()->name }}.</h2>
-
-							</div>
-
-							<div class="profile-usertitle-job">
-								{{ Auth::user()->email }}
-							</div>
-							</br>
-
-						</div>
-						<!-- END SIDEBAR USER TITLE -->
-						<!-- SIDEBAR BUTTONS -->
-						<!--<div class="profile-userbuttons">
-                            <button type="button" class="btn btn-success btn-sm">Follow</button>
-                            <button type="button" class="btn btn-danger btn-sm">Message</button>
-                        </div>
-                        <!-- END SIDEBAR BUTTONS -->
-						<!-- SIDEBAR MENU -->
-						<div class="profile-usermenu wish-list-table">
-							<ul class="nav">
-								<li class="wish">
-									<a href="{{ route('register.show', ['id'=>Auth::user()->id]) }}">
-										<span><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
-										Meu Perfil </a>
-									</a>
-								</li>
-								<li class="wish">
-									<a href="{{route('admin.newsletters.create')}}" target="_blank">
-										<span><i class="glyphicon glyphicon-send"></i></span>Receber novidades </a>
-								</li>
-								<li class="wish">
-									<a href="{{route('admin.supports.create')}}" target="_blank">
-										<span><i class="glyphicon glyphicon-flag"></i></span>
-										Suporte ao usuário</a>
-								</li>
-							</ul>
-						</div>
-						<!-- END MENU -->
-					</div>
-				</div>
-				<div class="col-md-8 single-top-in ">
-
-					<h3>Lista de pedidos</h3>
-					<p class="in-para"> Olá,<b>{{ Auth::user()->name }}.</b> Veja sua lista de pedidos.</p>
-					<div class="bs-example" data-example-id="simple-table">
-						<table class="table">
-							<tr>
-								<th>Data e Horário</th>
-
-								<th>Status do Pedido</th>
-								<th>Visualizar Pedido</th>
-							</tr>
-							@foreach($userOrders as $order)
-								<tr>
-									<td>{{$order->updated_at}}</td>
-									<td>{{$order->status}}</td>
-									<td class="text-center">
-										<div class="wish-list-table">
-											<ul>
-												<li class="wish"><a href="{{ route('admin.orders.show',['id'=> $order->id]) }}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Visualizar pedido</a></li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-							@endforeach
-						</table>
-					</div>
-
-				</div>
-
-			</div>
-			<div class="clearfix"> </div>
-			<!---->
-
-
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<!---->
-	</div>
-
-	@endcan
-
 @endsection

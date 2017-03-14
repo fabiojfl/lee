@@ -3,6 +3,7 @@
 <head>
 <title>Lee lee | Cosméticos</title>
 <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" >
+
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" >
@@ -40,8 +41,10 @@
 		});
 		</script>
 <!---//End-rate---->
-</head>
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" media="all" >
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+</head>
+
 <body>
 <!--header-->
 <div class="header">

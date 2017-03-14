@@ -71,29 +71,27 @@
 
 	</div><!-- end col-md-7 single-top-in -->
 	<div class="clearfix"> </div>
-	<br><br>
-	<h1>Descrição</h1>
-
+	
+	<div class="page-header">
+        <h3>Descrição</h3>
+      </div>
 	<p class="quick_desc">{{$product->description}}</p>
 
 	@foreach($product->features as $feature)
 		<br>
-		<h1>{{$feature->title}}</h1>
+		<div class="page-header">
+        	<h3>{{$feature->title}}</h3>
+      	</div>
 		<p class="quick_desc">{{$feature->description}}</p>
-
-
+		  <!-- 
 		<div class="facts">
-			<p ></p>
 			<ul>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Research</li>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Design and Development</li>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Porting and Optimization</li>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>System integration</li>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Verification, Validation and Testing</li>
-				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Maintenance and Support</li>
+			
+				<li><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>text</li>
+		
 			</ul>
 		</div><!-- end facts -->
-
+		
 	@endforeach
 	<!--facts-->
 

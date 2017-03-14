@@ -19,12 +19,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	font-family:'Oxygen-Regular';
 	src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
 }
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 html,body{
 	background:#fff;
 	font-size: 100%;
 	font-family:'Oxygen-Regular';
 	 
 }
+
 body a{
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -1661,6 +1663,37 @@ ul.tag-in li a:hover{
 	color:#000;
 	font-family: 'Ubuntu-Regular';
 }
+.page-header-admin-client h3{
+	color:#000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 33px;
+	margin: 20px 0;
+	
+}
+.page-header-admin-client h2{
+	color:#000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 45px;
+	margin: 20px 0;
+	
+}
+
+.page-header-admin-client h4{
+	color:#000;
+	font-family: 'Open Sans', sans-serif;
+	 font-size: 1.5em;
+	margin: 20px 0;
+	
+}
+
+.page-header-admin-client p{
+
+	font-family: 'Open Sans', sans-serif;
+	 font-size: 1.3em;
+	 padding-bottom: 5px;
+	
+}
+
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
   padding: 8px;
   line-height: 1.42857143;

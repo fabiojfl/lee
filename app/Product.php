@@ -42,7 +42,7 @@ class Product extends Model {
     {
         return $this->hasMany('CodeCommerce\Features');
     }
-
+    
     public function getNameDescriptionAttribute()
     {
         return $this->name." - ".$this->description;
