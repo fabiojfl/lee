@@ -93,8 +93,8 @@
 							<li><a class="color4" href="{{url('/about')}}">A Leelee</a></li>
 							<!-- <li ><a class="color6" href="{{url('/about')}}">Promoções</a></li> -->
 							<li><a class="color4" href="{{url('/category/1')}}">Matizadores</a></li>
-							<li><a class="color4" href="{{url('/')}}">Promoções</a></li>
-							<li><a class="color4" href="{{url('/')}}">Newslatter</a></li>
+							<!--  <li><a class="color4" href="{{url('/')}}">Promoções</a></li>-->
+							<li><a class="color4" href="{{url('/newslatter')}}">Novidades</a></li>
 							<li ><a class="color6" href="{{url('/contact')}}">Atendimento</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->

@@ -120,7 +120,7 @@
     <div class="produced">
 		<a href="{{ route('store.checkout.place') }}" class="btn hvr-skew-backward">Fechar a conta</a>
 	</div>
-
+<div class="space-bottom"></div>
 </div>
 
 @stop

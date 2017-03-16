@@ -91,7 +91,7 @@
 						<label class="hvr-skew-backward">
 							{!! Form::submit('Enviar') !!}
 						</label>
-</form>						
+  					{!! Form::close() !!}						
 				</div>
 		<div class="clearfix"></div>
 		</div>

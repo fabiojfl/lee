@@ -92,7 +92,7 @@
 
 
                             <button type="submit" class="btn hvr-skew-backward">
-                                Register
+                                Enviar
                             </button>
 
 
@@ -134,8 +134,9 @@
                 </div>
 
                 <div class="clearfix"> </div>
-            </form>
+        
         </div>
+        
 
-    </div>
+  <div class="space-bottom"></div>
 @endsection

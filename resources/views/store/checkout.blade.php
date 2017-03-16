@@ -20,4 +20,5 @@
             <p>O pedido #{{ $order->id }}, foi realizado com sucesso!</p>
         @endif
     </div>
+     
 @stop

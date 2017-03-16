@@ -56,9 +56,7 @@
                         <div class="clearfix"> </div>
                     </form>
         </div>
-
-    </div>
-
-    <!--//login-->
-
+<div class="clearfix"> </div>
+    </div><!--//login-->
+    <div class="space-bottom"></div>
 @endsection

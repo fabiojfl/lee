@@ -3,12 +3,10 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\Category;
-use CodeCommerce\Http\Requests;
 use CodeCommerce\User;
-use Illuminate\Http\Request;
 use CodeCommerce\Order;
 use Illuminate\Support\Facades\Auth;
-use CodeCommerce\SubCategory;
+
 
 class HomeController extends Controller
 {
@@ -17,11 +15,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Order $order, Category $category)
+    public function __construct(Order $order, Category $category, User $user)
     {
         $this->middleware('auth');
 	    $this->order = $order;
         $this->category = $category;
+        $this->user = $user;
 
     }
 
@@ -34,13 +33,11 @@ class HomeController extends Controller
     {
 	$userId = Auth::user()->id;
 	$userOrders = $this->order->where('user_id', auth()->user()->id )->get();
-	
-	//Aula 06 - Iniciando ACL com Laravel	parou 10:00
+	$user = $this->user->find($userId);
 	$orders = $this->order->all();
-	//$this->authorize('admin-order', $orders);
-        $categories = $this->category->all();
+	$categories = $this->category->all();
 
-        return view('home',compact('orders', 'categories', 'userOrders'));
+        return view('home',compact('orders', 'categories', 'userOrders', 'user'));
     }
 
     public function update($idOrder)

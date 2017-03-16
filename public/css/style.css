@@ -2577,3 +2577,9 @@ td.add-check a {
     background-size: 542px;
 }
 }
+
+.space-bottom
+{
+	margin-bottom: 48px;
+	margin-top: 5px;
+}

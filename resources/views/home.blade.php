@@ -14,7 +14,7 @@
 @can('user')
 	<!--content-->
 <div class="container">
-<div class="page-header-admin-client page-header">
+	<div class="page-header-admin-client page-header">
         <h2>Minha Conta</h2>
     </div>
 	<div class="page-header-admin-client">
@@ -47,26 +47,33 @@
     <div class="page">
 		<div class="grid_3 grid_4">
 			<div class="page-header-admin-client page-header">
-       		<h2>Dados do Usuário</h2>
-      	</div>
-  		<div class="row">
-            <div class="col-sm-8 page-header-admin-client">
-            <h4>Olá,{{ Auth::user()->name }}.</h4>
-                <p>{{ Auth::user()->email }}</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
-                <p>
-                    <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
-                </p>
-            </div>
-            <div class="col-sm-4 page-header-admin-client">
-                <h4>Menu de Opções</h4>
-                <p><a href="{{ route('register.show', ['id'=>Auth::user()->id]) }}"><span>Editar Perfil</span></a></p>
-                <p><a href="{{route('admin.newsletters.create')}}"><span>Receber novidades</span></a></p>
-                <p><a href="{{route('admin.supports.create')}}"><span>Atendimento</span></a></p>
-            </div>
-        </div> <!-- //.row -->    
-    </div><!-- //Page -->
-</div><!--//Container-->
+				<h2>Dados do Usuário</h2>
+			</div>
+			<div class="row">
+				<div class="col-sm-8 page-header-admin-client">
+					<h3>Perfil</h3>
+				<h4>Olá,{{ Auth::user()->name }}.</h4>
+					<p>{{ Auth::user()->email }}</p>
+					<h3>Endereço</h3>
+						<p>{{$user->address . ", " . $user->number }}</p>
+					<p>{{$user->district}}</p>
+					<p>{{$user->city." - ". $user->state}}</p>
+					<br>
+					<!--
+					<p>
+						<a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
+					</p>
+					-->
+				</div>
+				<div class="col-sm-4 page-header-admin-client">
+					<h4>Menu de Opções</h4>
+
+					<!--  <p><a href="{{ route('admin.users.edit', ['id'=>$user->id]) }}"><span>Editar Perfil</span></a></p> -->
+					<p><a href="{{route('admin.newsletters.create')}}"><span>Receber novidades</span></a></p>
+					<p><a href="{{route('admin.supports.create')}}"><span>Atendimento</span></a></p>
+				</div>
+			</div> <!-- //.row -->
+    	</div><!-- //Page -->
+	</div><!--//Container-->
 	@endcan
 @endsection

@@ -3,9 +3,7 @@
 namespace CodeCommerce\Http\Controllers;
 
 use CodeCommerce\User;
-use CodeCommerce\Http\Controllers\Auth;
 use Illuminate\Http\Request;
-
 use CodeCommerce\Http\Requests;
 
 class RegisterController extends Controller
@@ -42,7 +40,15 @@ class RegisterController extends Controller
 
         return redirect()->route('home');
     }
-
+    
+    public function update(Request $request, $id)
+    {
+    	$input = $request->all();
+    	$input['is_admin'] = $request->get('is_admin') ? true : false;
+    	$this->userModel->find($id)->update($input);
+    	return redirect()->route('admin.users.index');
+    }
+    
     public function show($id)
     {
         $user = $this->userModel->find($id);

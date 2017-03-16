@@ -26,6 +26,9 @@ Route::get('/about' ,['as' => 'store.pages.about', 'uses' => 'StoreController@ab
 Route::get('/contact'  ,['as' => 'store.pages.contact', 'uses' => 'ContactController@create']);
 Route::post('/store'   ,['as' => 'store.pages.store',   'uses' => 'ContactController@store']);
 
+
+
+
 //Route::get('/home', )
 Route::get('/product-categories/{id}' ,['as' => 'store.product_categories.products', 'uses' => 'StoreController@product_category']);
 
@@ -59,9 +62,13 @@ Route::group(['middleware' => 'auth'], function(){
 //Route::get('dashboard/home', ['as'=>'store.dashboard.home', 'uses' => 'StoreController@dashboard']);
 //Route::get('',['as'=> 'dashboard','uses'=>'' ]);
 
-Route::get('newsletters/create',['as'=>'admin.newsletters.create','uses'=> 'AdminNewsletterController@create']);
-Route::post('newsletters/create',['as'=>  'admin.newsletters.store','uses'=>'AdminNewsletterController@store']);
-Route::get('newsletters/message',['as'=>'admin.newsletters.message','uses'=> 'AdminNewsletterController@message']);
+Route::get('/newslatter'  		,['as' => 'store.pages.newslattercreate',   'uses' =>'AdminNewsletterController@newslattercreate']);
+Route::post('/store'  		    ,['as' => 'store.pages.newslatterstore',    'uses' =>'AdminNewsletterController@newslatterstore']);
+Route::get('/newsletters'       ,['as '=> 'store.pages.message',		    'uses'=> 'AdminNewsletterController@newslattermessage']);
+
+Route::get('newsletters/create'	,['as'=> 'admin.newsletters.create',	'uses'=> 'AdminNewsletterController@create']);
+Route::post('newsletters/create',['as'=> 'admin.newsletters.store',		'uses'=> 'AdminNewsletterController@store']);
+Route::get('newsletters/message',['as'=> 'admin.newsletters.message',	'uses'=> 'AdminNewsletterController@message']);
 
 Route::group(['prefix'=>'admin', 'middleware' => 'auth'], function(){
 
