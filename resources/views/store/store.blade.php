@@ -43,6 +43,13 @@
 <!---//End-rate---->
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" media="all" >
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6147210221245640",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 
 <body>

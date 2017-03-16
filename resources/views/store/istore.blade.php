@@ -41,11 +41,19 @@
 		</script>
 <!---//End-rate---->
 <!--slider-script-->
-
-</head>
 <link href="{{ asset('css/form.css') }}" rel="stylesheet" type="text/css" media="all" >
 
 <link href="{{ asset('css/jquery.bxslider.css') }}" rel="stylesheet" type="text/css" media="all"/>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6147210221245640",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
 <body>
 <!--header-->
 <div class="header">
