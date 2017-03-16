@@ -58,7 +58,8 @@ class AdminNewsletterController extends Controller
     public function newslatterstore(Request $request)
     {
     	$this->newsletter->create($request->all());
-    	return redirect()->route('store.pages.message');
+    	return redirect()->route('store.pages.newslattermessage');
+    	
     }
     
     public function newslattermessage()

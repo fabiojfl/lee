@@ -63,8 +63,8 @@ Route::group(['middleware' => 'auth'], function(){
 //Route::get('',['as'=> 'dashboard','uses'=>'' ]);
 
 Route::get('/newslatter'  		,['as' => 'store.pages.newslattercreate',   'uses' =>'AdminNewsletterController@newslattercreate']);
-Route::post('/store'  		    ,['as' => 'store.pages.newslatterstore',    'uses' =>'AdminNewsletterController@newslatterstore']);
-Route::get('/newsletters'       ,['as '=> 'store.pages.message',		    'uses'=> 'AdminNewsletterController@newslattermessage']);
+Route::post('/newslatterstore'  ,['as' => 'store.pages.newslatterstore',    'uses' =>'AdminNewsletterController@newslatterstore']);
+Route::get('/newslattermessage' ,['as '=> 'store.pages.newslattermessage',	'uses'=> 'AdminNewsletterController@newslattermessage']);
 
 Route::get('newsletters/create'	,['as'=> 'admin.newsletters.create',	'uses'=> 'AdminNewsletterController@create']);
 Route::post('newsletters/create',['as'=> 'admin.newsletters.store',		'uses'=> 'AdminNewsletterController@store']);
