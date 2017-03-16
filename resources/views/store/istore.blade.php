@@ -64,7 +64,7 @@
                             <li><a href="{{ url('/auth/login') }}"><i class="fa fa-lock"></i>Minha conta</a></li>
 							<li><a href="{{ url('/auth/register') }}">Cadastre-se</a></li>
 						@else
-							<li><a href="{{ url('/home') }}"><i class="fa fa-lock"></i>Minha conta</a></li>
+							<li><a href="{{ url('/home') }}"><i class="fa fa-lock"></i>Minha conta&nbsp; (Olá, &nbsp; {{ Auth::user()->name }})</a></li>
                              <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>Sair</a></li>
 						@endif
 					</ul>

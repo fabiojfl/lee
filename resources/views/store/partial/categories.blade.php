@@ -88,7 +88,7 @@
 									</script>
 			        	<!--//menu-->
 		 				<section  class="sky-form ">
-		 					<img src="{{url('images/BOLT_RESIZE_300x600_v6.jpg')}}" class="img-responsive" alt="">
+		 					<!-- <img src="{{url('images/BOLT_RESIZE_300x600_v6.jpg')}}" class="img-responsive" alt=""> -->
 						 </section> 	
 						 			 				 
 						</div><!-- dysplay -->	

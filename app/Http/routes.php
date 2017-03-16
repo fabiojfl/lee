@@ -24,7 +24,7 @@ Route::get('/about' ,['as' => 'store.pages.about', 'uses' => 'StoreController@ab
 
 
 Route::get('/contact'  ,['as' => 'store.pages.contact', 'uses' => 'ContactController@create']);
-Route::post('/store'   ,['as' => 'store.pages.store',   'uses' => 'ContactController@store']);
+Route::post('/contact'   ,['as' => 'store.pages.store',   'uses' => 'ContactController@store']);
 
 
 
