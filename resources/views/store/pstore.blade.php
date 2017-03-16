@@ -126,10 +126,10 @@
 			<div class="container">
 				<div class="brand"> <!-- brand -->
 					<div class="col-md-6 brand-grid">
-						<img src="{{url('images/banner-dearest-nature-300x100.gif')}}" class="img-responsive" alt="">
+						<!-- <img src="{{url('images/banner-dearest-nature-300x100.gif')}}" class="img-responsive" alt="">  -->
 					</div>
 					<div class="col-md-6 brand-grid">
-						<img src="{{url('images/st_300x100.png')}}" class="img-responsive" alt="">
+						<!-- <img src="{{url('images/st_300x100.png')}}" class="img-responsive" alt=""> -->
 					</div>
 					<div class="clearfix"></div>
 				</div> <!-- end brand -->
